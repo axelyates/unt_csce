@@ -1,0 +1,12 @@
+	 x 		 x^2 		 Current Sum 
+	 === 		 === 		 ===========
+	 4		 16		 4
+	 4		 16		 8
+	 4		 16		 12
+	 4		 16		 16
+	 4		 16		 20
+	 4		 16		 24
+	 4		 16		 28
+	 4		 16		 32
+
+ 	 The average of these 8 numbers is: 4

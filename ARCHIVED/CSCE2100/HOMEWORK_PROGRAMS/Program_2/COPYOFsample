@@ -1,0 +1,29 @@
+push
+
+insert 47
+
+insert 56
+
+insert 1023
+
+insert 75
+
+search 19
+
+search 56
+
+push
+
+insert 19
+
+insert 91
+
+insert 82511673
+
+search 19
+
+search 82511673
+
+pop
+
+pop

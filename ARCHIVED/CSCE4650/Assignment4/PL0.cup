@@ -1,0 +1,67 @@
+import java_cup.runtime.*;
+
+terminal ID;
+terminal INTEGER;
+terminal LT, LE, GT, GE, EQ, NE;
+terminal PLUS, MINUS;
+terminal TIMES, SLASH;
+terminal SEMICOLON, PERIOD, COMMA, LPAREN, RPAREN, ASSIGN;
+terminal BEGIN, CALL, CONST, DO, END, IF, ODD, PROC, THEN, VAR, WHILE;
+
+non terminal program;
+non terminal block;
+non terminal constDecl;
+non terminal constAssignmentList;
+non terminal varDecl;
+non terminal identList;
+non terminal procDecl;
+non terminal statement;
+non terminal statementList;
+non terminal condition;
+non terminal expression;
+non terminal relation;
+non terminal term;
+non terminal addingOperator;
+non terminal factor;
+non terminal multiplyingOperator;
+
+start with program;
+
+program ::= block PERIOD ;
+
+block ::= constDecl varDecl procDecl statement ;
+
+constDecl ::= CONST constAssignmentList SEMICOLON | ;
+
+constAssignmentList ::= ID EQ INTEGER
+    | constAssignmentList COMMA ID EQ INTEGER ;
+
+varDecl ::= VAR identList SEMICOLON | ;
+
+identList ::= ID | identList COMMA ID ;
+
+procDecl ::= procDecl PROC ID SEMICOLON block SEMICOLON | ;
+
+statement ::= ID ASSIGN expression
+    | CALL ID
+    | BEGIN statementList END
+    | IF condition THEN statement
+    | WHILE condition DO statement
+    | ;
+
+statementList ::= statement | statementList SEMICOLON statement ;
+
+condition ::= ODD expression | expression relation expression ;
+
+relation ::= EQ | NE | LT | GT | LE | GE ;
+
+expression ::= term | addingOperator term
+    | expression addingOperator term ;
+
+addingOperator ::= PLUS | MINUS ;
+
+term ::= factor | term multiplyingOperator factor ;
+
+multiplyingOperator ::= TIMES | SLASH ;
+
+factor ::= ID | INTEGER | LPAREN expression RPAREN ;

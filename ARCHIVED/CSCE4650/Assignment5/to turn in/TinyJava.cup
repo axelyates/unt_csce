@@ -1,0 +1,171 @@
+import java_cup.runtime.*;
+
+terminal ID, INTEGER;
+terminal AND, OR, NOT;
+terminal SYSTEM, THIS, TRUE, UTIL, VOID, WHILE;
+terminal LT, LE, GT, GE, EQ, NE;
+terminal SEMICOLON, DOT, COMMA;
+terminal LPAREN, RPAREN, LBRACK, RBRACK, LBRACE, RBRACE, ASSIGN;
+terminal PLUS, MINUS, TIMES, SLASH;
+terminal ARGS, BOOLEAN, CLASS, ELSE, FALSE, IF, IMPORT, IN, INT, JAVA, MAIN;
+terminal NEXTINT, NEW, OUT, PRINTLN, PUBLIC, RETURN, SCANNER, STATIC, STRING; 
+
+non terminal program;
+non terminal classDefinitionList;
+non terminal classDefinition;
+non terminal memberList;
+non terminal variableDeclaration;
+non terminal arrayDeclaration;
+non terminal subscriptDeclarationList;
+non terminal dimensionList;
+non terminal mainDeclaration;
+non terminal type;
+non terminal argumentDeclarationListOption;
+non terminal argumentDeclarationList;
+non terminal argumentDeclaration;
+non terminal compoundStatement;
+non terminal memberDeclaration;
+non terminal memberDeclarator;
+non terminal staticOption;
+non terminal functionDefinition;
+non terminal functionDeclaration;
+non terminal variableDeclarationList;
+non terminal statementList;
+non terminal statement;
+non terminal assignmentStatement;
+non terminal returnStatementOption;
+non terminal arithmeticExpression;
+non terminal term;
+non terminal factor;
+non terminal primaryExpression;
+non terminal addingOperator;
+non terminal multiplyingOperator;
+non terminal relationalOperator;
+non terminal unaryOperator;
+non terminal object;
+non terminal variable;
+non terminal elseOption;
+non terminal expressionListOption;
+non terminal expressionList;
+non terminal expression;
+non terminal andExpression;
+non terminal relationalExpression;
+non terminal subscriptList;
+non terminal functionCall;
+non terminal classId;
+non terminal objectId;
+non terminal functionId;
+
+start with program;
+
+program ::= IMPORT JAVA DOT UTIL DOT TIMES SEMICOLON classDefinitionList ;
+
+classDefinitionList ::= classDefinition | classDefinitionList classDefinition ;
+
+classDefinition ::= CLASS classId LBRACE memberList RBRACE ;
+
+memberList ::= memberList memberDeclaration | ;
+
+memberDeclaration ::= memberDeclarator SEMICOLON | functionDefinition ;
+
+memberDeclarator ::= staticOption variableDeclaration ;
+
+staticOption ::= STATIC | ;
+
+functionDefinition ::= functionDeclaration LBRACE 
+    variableDeclarationList statementList returnStatementOption RBRACE 
+  | functionDeclaration LBRACE statementList returnStatementOption RBRACE 
+  | functionDeclaration LBRACE variableDeclarationList returnStatementOption RBRACE 
+  | functionDeclaration LBRACE returnStatementOption RBRACE ;
+
+functionDeclaration ::= 
+    PUBLIC type functionId LPAREN argumentDeclarationListOption RPAREN
+  | PUBLIC STATIC type functionId LPAREN argumentDeclarationListOption RPAREN
+  | mainDeclaration ;
+
+variableDeclarationList ::= variableDeclaration SEMICOLON
+  | variableDeclarationList variableDeclaration SEMICOLON ; 
+
+variableDeclaration ::= type objectId 
+  | type objectId arrayDeclaration ;
+
+arrayDeclaration ::= subscriptDeclarationList ASSIGN NEW INT dimensionList ;
+
+subscriptDeclarationList ::= subscriptDeclarationList LBRACK RBRACK | ;
+
+dimensionList ::= dimensionList LBRACK INTEGER RBRACK | LBRACK INTEGER RBRACK ;
+
+mainDeclaration ::= 
+    STATIC SCANNER IN ASSIGN NEW SCANNER LPAREN SYSTEM DOT IN RPAREN SEMICOLON
+    PUBLIC STATIC VOID MAIN LPAREN STRING ARGS LBRACK RBRACK RPAREN
+  | PUBLIC STATIC VOID MAIN LPAREN STRING ARGS LBRACK RBRACK RPAREN ;
+
+type ::= classId | INT | BOOLEAN ;
+
+argumentDeclarationListOption ::= argumentDeclarationList | ;
+
+argumentDeclarationList ::= argumentDeclarationList COMMA argumentDeclaration
+  | argumentDeclaration ;
+
+argumentDeclaration ::= type objectId subscriptDeclarationList ;
+
+compoundStatement ::= LBRACE statementList RBRACE ;
+
+statementList ::= statementList statement | statement ;
+
+statement ::= compoundStatement 
+  | assignmentStatement SEMICOLON 
+  | IF LPAREN expression RPAREN statement elseOption
+  | WHILE LPAREN expression RPAREN statement 
+  | SYSTEM DOT OUT DOT PRINTLN LPAREN expression RPAREN SEMICOLON ;
+
+assignmentStatement ::= variable ASSIGN expression 
+  | variable ASSIGN NEW classId LPAREN RPAREN 
+  | variable ASSIGN IN DOT NEXTINT LPAREN RPAREN ;
+
+returnStatementOption ::= RETURN expression SEMICOLON | ;
+
+expressionListOption ::= expressionList | ;
+
+expressionList ::= expressionList COMMA expression | expression ;
+
+expression ::= expression OR andExpression | andExpression ;
+
+andExpression ::= andExpression AND relationalExpression
+  | relationalExpression ;
+
+relationalExpression ::= 
+    arithmeticExpression relationalOperator arithmeticExpression
+  | arithmeticExpression ;
+
+relationalOperator ::= LT | LE | GT | GE | EQ | NE ;
+
+arithmeticExpression ::= term | arithmeticExpression addingOperator term ;
+
+addingOperator ::= PLUS | MINUS ;
+
+term ::= factor | term multiplyingOperator factor ;
+
+multiplyingOperator ::= TIMES | SLASH ;
+
+factor ::= primaryExpression | unaryOperator factor ;
+
+unaryOperator ::= addingOperator | NOT ;
+
+primaryExpression ::= object | INTEGER | TRUE | FALSE 
+  | LPAREN expression RPAREN ;
+
+object ::= variable | functionCall ;
+
+variable ::= THIS | objectId subscriptList | object DOT objectId subscriptList ;
+
+subscriptList ::= subscriptList LBRACK expression RBRACK | ;
+
+functionCall ::= functionId LPAREN expressionListOption RPAREN 
+  | object DOT functionId LPAREN expressionListOption RPAREN ; 
+
+classId ::= ID ;
+
+objectId ::= ID ;
+
+functionId ::= ID ;

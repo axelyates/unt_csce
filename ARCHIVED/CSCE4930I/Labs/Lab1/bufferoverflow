@@ -1,0 +1,3 @@
+strcpy vs strncpy
+strncpy uses n to calculate n length of string n.
+

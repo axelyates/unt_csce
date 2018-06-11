@@ -1,0 +1,34 @@
+This is contingent on having "raw_int.txt" in the same directory.
+This program uses redirected input as a means to take in data.
+
+How to run program:
+
+Step 1:
+    Compile it by running "g++ cuckoo.cpp" without the quotation marks.
+
+Step 2:
+    Run "./a.out < raw_int.txt > output" without the quotation marks.
+
+    /*
+    What this does is place all of the redirected output into a single file.
+    Also, you can name the file whatever you'd like.
+    */
+
+Step 3:
+    To view output use "vi output" without the quotation marks.
+
+    /*
+    Or whichever editor you'd like, this works with nano, vim, etc.
+    */
+
+Step 4:
+    Have a great day and feel free to give me an A.
+
+/*
+
+    As an aside, with the changes to the program late I wasn't sure what needed to be
+    printed out and what didn't so I went ahead and printed out everything. I
+    apologize if this isn't right but I wanted to have my bases covered anyway and
+    show that I knew what I was doing. Thanks for understanding.
+
+*/

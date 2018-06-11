@@ -1,0 +1,19 @@
+This is contingent on having "prog1.cpp", "prog2.cpp", and "prog3.cpp" in the same directory.
+This program uses redirected input as a means to take in data.
+
+How to run program:
+
+Step 1:
+    Compile it by running "g++ syntax.cpp" without the quotation marks.
+
+Step 2:
+    Run "./a.out < prog1.cpp" without the quotation marks to get the response as to whether or not prog1.cpp has any syntax errors.
+
+Step 3:
+    Run "./a.out < prog2.cpp" without the quotation marks to get the response as to whether or not prog2.cpp has any syntax errors.
+
+Step 4:
+    Run "./a.out < prog3.cpp" without the quotation marks to get the response as to whether or not prog3.cpp has any syntax errors.
+
+Step 5:
+    Have a great day and feel free to give me an A.

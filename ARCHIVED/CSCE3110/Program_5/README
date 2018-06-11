@@ -1,0 +1,27 @@
+
+
+**** VERY IMPORTANT!! Program works, but the input or "test" data needs to be labled "graph.txt" without the quotation marks. ****
+**** This program will not work as well, if at all if you don't use "graph.txt" as your test input document name.             ****
+**** The reasoning for this is not arbitrary, this program opens "graph.txt" and uses that file to create the size of graph   ****
+**** that it'll use for the redirected input. Hence, this program can't have one without the other. I know that this is not   ****
+**** normal and I appreciate your flexibility.                                                                                ****
+
+
+That being said, the biggest sample size we were given was up to 50 nodes, I can guarantee that it'll work with that many nodes.
+
+To run this program:
+
+Step 1:
+    compile it by typing in "g++ *.cpp" without the quotation marks
+
+Step 2:
+    this program uses redirected input so type in:
+    "./a.out < graph.txt > output.txt" without the quotation marks
+    //remember, it HAS to be labeled "graph.txt" without the quotation marks
+
+Step 3:
+    type in "vi output.txt" without the quotes to verify the program worked correctly
+    //of course you can use whichever editor you prefer i.e. nano, vim, etc.
+
+Step 4:
+    feel free to give me an A!!

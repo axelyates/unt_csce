@@ -1,0 +1,188 @@
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 Aug28 ?        00:00:10 /sbin/init
+root         2     0  0 Aug28 ?        00:00:01 [kthreadd]
+root         3     2  0 Aug28 ?        00:16:01 [ksoftirqd/0]
+root         6     2  0 Aug28 ?        00:00:06 [migration/0]
+root         7     2  0 Aug28 ?        00:00:11 [watchdog/0]
+root         8     2  0 Aug28 ?        00:00:05 [migration/1]
+root        10     2  0 Aug28 ?        00:00:22 [ksoftirqd/1]
+root        12     2  0 Aug28 ?        00:00:08 [watchdog/1]
+root        13     2  0 Aug28 ?        00:00:04 [migration/2]
+root        15     2  0 Aug28 ?        00:00:15 [ksoftirqd/2]
+root        16     2  0 Aug28 ?        00:00:07 [watchdog/2]
+root        17     2  0 Aug28 ?        00:00:00 [cpuset]
+root        18     2  0 Aug28 ?        00:00:00 [khelper]
+root        19     2  0 Aug28 ?        00:00:00 [kdevtmpfs]
+root        20     2  0 Aug28 ?        00:00:00 [netns]
+root        21     2  0 Aug28 ?        00:00:39 [kworker/u:1]
+root        22     2  0 Aug28 ?        00:00:04 [sync_supers]
+root        23     2  0 Aug28 ?        00:00:00 [bdi-default]
+root        24     2  0 Aug28 ?        00:00:00 [kintegrityd]
+root        25     2  0 Aug28 ?        00:00:00 [kblockd]
+root        26     2  0 Aug28 ?        00:00:00 [ata_sff]
+root        27     2  0 Aug28 ?        00:00:00 [khubd]
+root        28     2  0 Aug28 ?        00:00:00 [md]
+root        30     2  0 Aug28 ?        00:00:01 [khungtaskd]
+root        31     2  0 Aug28 ?        00:01:22 [kswapd0]
+root        32     2  0 Aug28 ?        00:00:00 [vmstat]
+root        33     2  0 Aug28 ?        00:00:00 [ksmd]
+root        34     2  0 Aug28 ?        00:00:00 [khugepaged]
+root        35     2  0 Aug28 ?        00:00:00 [fsnotify_mark]
+root        36     2  0 Aug28 ?        00:00:00 [ecryptfs-kthrea]
+root        37     2  0 Aug28 ?        00:00:00 [crypto]
+root        45     2  0 Aug28 ?        00:00:00 [kthrotld]
+root        46     2  0 Aug28 ?        00:00:00 [scsi_eh_0]
+root        47     2  0 Aug28 ?        00:03:51 [scsi_eh_1]
+root        68     2  0 Aug28 ?        00:00:00 [devfreq_wq]
+root       189     2  0 Aug28 ?        00:00:00 [mpt_poll_0]
+root       207     2  0 Aug28 ?        00:00:00 [mpt/0]
+root       286     2  0 Aug28 ?        00:00:00 [scsi_eh_2]
+root       288     2  0 Aug28 ?        00:00:00 [ttm_swap]
+root       339     2  0 Aug28 ?        00:00:27 [jbd2/sda1-8]
+root       340     2  0 Aug28 ?        00:00:00 [ext4-dio-unwrit]
+root       442     1  0 Aug28 ?        00:00:01 upstart-udev-bridge --daemon
+root       444     1  0 Aug28 ?        00:00:01 /sbin/udevd --daemon
+root       663     1  0 Aug28 ?        00:00:00 upstart-socket-bridge --daemon
+root       705   444  0 Aug28 ?        00:00:01 /sbin/udevd --daemon
+root       751     1  0 Aug28 ?        00:00:04 rpcbind -w
+root       791     2  0 Aug28 ?        00:00:00 [kpsmoused]
+root      1039     2  0 Aug28 ?        00:00:00 [rpciod]
+root      1068     2  0 Aug28 ?        00:00:00 [nfsiod]
+root      1069   444  0 Aug28 ?        00:00:00 /sbin/udevd --daemon
+statd     1080     1  0 Aug28 ?        00:00:00 rpc.statd -L
+syslog    1082     1  0 Aug28 ?        00:02:26 rsyslogd -c5
+root      1094     1  0 Aug28 ?        00:00:21 rpc.idmapd
+102       1150     1  0 Aug28 ?        00:11:21 dbus-daemon --system --fork --activation=upstart
+root      1164     1  0 Aug28 ?        00:00:01 /usr/sbin/modem-manager
+root      1181     1  0 Aug28 ?        00:00:01 /usr/sbin/cupsd -F
+root      1197     1  0 Aug28 ?        00:00:02 /usr/sbin/bluetoothd
+root      1200     1  0 Aug28 ?        00:02:55 NetworkManager
+root      1271     2  0 Aug28 ?        00:00:00 [krfcommd]
+root      1277     1  0 Aug28 ?        00:20:58 /usr/lib/policykit-1/polkitd --no-debug
+root      1355     1  0 Aug28 ?        00:21:54 /usr/bin/vmtoolsd
+root      1401     1  0 Aug28 tty4     00:00:00 /sbin/getty -8 38400 tty4
+root      1405     1  0 Aug28 tty5     00:00:00 /sbin/getty -8 38400 tty5
+root      1414     1  0 Aug28 tty2     00:00:00 /sbin/getty -8 38400 tty2
+root      1415     1  0 Aug28 tty3     00:00:00 /sbin/getty -8 38400 tty3
+root      1417     1  0 Aug28 tty6     00:00:00 /sbin/getty -8 38400 tty6
+root      1430     1  0 Aug28 ?        00:00:00 acpid -c /etc/acpi/events -s /var/run/acpid.socket
+root      1432     1  0 Aug28 ?        00:00:03 cron
+daemon    1434     1  0 Aug28 ?        00:00:00 atd
+root      1441     1  0 Aug28 ?        00:00:00 lightdm
+root      1445     1  0 Aug28 ?        00:03:16 /usr/sbin/irqbalance
+root      1455  1441  0 Aug28 tty7     00:37:07 /usr/bin/X :0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch -background none
+whoopsie  1461     1  0 Aug28 ?        00:00:00 whoopsie
+root      1480     1  0 Aug28 ?        00:01:51 /usr/sbin/automount
+root      1644     1  0 Aug28 ?        00:00:23 /usr/sbin/sshd -D
+root      1664  1441  0 Aug28 ?        00:00:00 lightdm --session-child 16 19
+root      1667     1  0 Aug28 ?        00:00:18 /usr/lib/accountsservice/accounts-daemon
+root      1687     1  0 Aug28 ?        00:04:51 /usr/sbin/console-kit-daemon --no-daemon
+lightdm   1761  1664  0 Aug28 ?        00:00:00 /bin/sh /usr/lib/lightdm/lightdm-greeter-session /usr/sbin/unity-greeter
+lightdm   1767     1  0 Aug28 ?        00:00:00 //bin/dbus-daemon --fork --print-pid 5 --print-address 8 --session
+lightdm   1768  1761  0 Aug28 ?        01:00:04 /usr/sbin/unity-greeter
+lightdm   1775     1  0 Aug28 ?        00:00:00 /usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately
+lightdm   1780  1775  0 Aug28 ?        00:00:00 /bin/dbus-daemon --config-file=/etc/at-spi2/accessibility.conf --nofork --print-address 3
+lightdm   1790     1  0 Aug28 ?        00:00:00 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+lightdm   1792     1  0 Aug28 ?        00:00:00 /usr/lib/gvfs/gvfsd
+lightdm   1813     1  0 Aug28 ?        00:00:00 /usr/lib/gvfs//gvfs-fuse-daemon -f /var/lib/lightdm/.gvfs
+lightdm   1820     1  0 Aug28 ?        00:00:00 /usr/lib/dconf/dconf-service
+lightdm   1823     1  0 Aug28 ?        00:00:00 /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+root      1831     1  0 Aug28 ?        00:00:11 /usr/lib/upower/upowerd
+colord    1879     1  0 Aug28 ?        00:00:12 /usr/lib/i386-linux-gnu/colord/colord
+root      1901     2  0 Aug28 ?        00:00:00 [nfsv4.0-svc]
+root      3006  1441  0 Aug28 ?        00:00:00 lightdm --session-child 12 19
+lightdm   3010     1  0 Aug28 ?        00:00:09 nm-applet
+lightdm   3014     1  0 Aug28 ?        00:00:00 /usr/lib/indicator-session/indicator-session-service
+lightdm   3016     1  0 Aug28 ?        00:00:11 /usr/lib/indicator-datetime/indicator-datetime-service
+lightdm   3019     1  0 Aug28 ?        00:00:00 /usr/lib/indicator-application/indicator-application-service
+lightdm   3020     1  0 Aug28 ?        00:00:00 /usr/lib/indicator-sound/indicator-sound-service
+ntp       3048     1  0 Aug28 ?        00:02:03 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 120:131
+lightdm   3058     1  0 Aug28 ?        00:00:04 /usr/lib/i386-linux-gnu/gconf/gconfd-2
+lightdm   3069     1  0 Aug28 ?        00:00:00 /usr/lib/geoclue/geoclue-master
+lightdm   3076     1  0 Aug28 ?        00:00:07 /usr/lib/ubuntu-geoip/ubuntu-geoip-provider
+lightdm   3083     1  0 Aug28 ?        00:00:01 /usr/bin/pulseaudio --start --log-target=syslog
+rtkit     3085     1  0 Aug28 ?        00:00:21 /usr/lib/rtkit/rtkit-daemon
+lightdm   3090  3083  0 Aug28 ?        00:00:00 /usr/lib/pulseaudio/pulse/gconf-helper
+root      3548     1  0 Aug28 tty1     00:00:00 /sbin/getty -8 38400 tty1
+root      9478     2  0 01:01 ?        00:00:08 [kworker/2:1]
+rd0253   10643     1  0 Sep12 ?        00:00:00 SCREEN
+rd0253   10644 10643  0 Sep12 pts/8    00:00:00 /bin/bash
+rd0253   12141     1  0 Sep12 ?        00:00:00 SCREEN
+rd0253   12142 12141  0 Sep12 pts/16   00:00:00 /bin/bash
+108      12376     1  0 Aug29 ?        00:00:15 /usr/sbin/hald
+root     12377 12376  0 Aug29 ?        00:00:00 hald-runner
+root     12417 12377  0 Aug29 ?        00:00:00 hald-addon-input: Listening on /dev/input/event1 /dev/input/event0
+root     12456 12377  0 Aug29 ?        00:04:40 hald-addon-storage: polling /dev/sr0 (every 2 sec)
+108      12461 12377  0 Aug29 ?        00:00:00 hald-addon-acpi: listening on acpid socket /var/run/acpid.socket
+root     12462 12377  0 Aug29 ?        00:00:52 hald-addon-storage: no polling on /dev/fd0 because it is explicitly disabled
+root     15806     2  0 06:56 ?        00:00:00 [flush-8:0]
+root     16039  1644  0 07:13 ?        00:00:00 sshd: als0462 [priv]
+als0462  16079 16039  0 07:13 ?        00:00:00 sshd: als0462@pts/0 
+als0462  16080 16079  0 07:13 pts/0    00:00:00 -bash
+root     16324  1644  0 07:13 ?        00:00:00 sshd: als0462 [priv]
+als0462  16360 16324  0 07:13 ?        00:00:00 sshd: als0462@notty 
+als0462  16361 16360  0 07:13 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     16385  1644  0 07:16 ?        00:00:00 sshd: als0462 [priv]
+als0462  16421 16385  0 07:16 ?        00:00:00 sshd: als0462@notty 
+als0462  16422 16421  0 07:16 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     17362  1644  0 07:57 ?        00:00:00 sshd: ks0593 [priv] 
+ks0593   17403 17362  0 07:57 ?        00:00:00 sshd: ks0593@notty  
+ks0593   17404 17403  0 07:57 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     17524  1644  0 08:07 ?        00:00:00 sshd: ks0593 [priv] 
+ks0593   17560 17524  0 08:07 ?        00:00:00 sshd: ks0593@pts/1  
+ks0593   17561 17560  0 08:07 pts/1    00:00:00 -bash
+root     18378  1644  0 08:18 ?        00:00:00 sshd: ary0012 [priv]
+ary0012  18418 18378  0 08:18 ?        00:00:00 sshd: ary0012@notty 
+ary0012  18419 18418  0 08:18 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     18422  1644  0 08:18 ?        00:00:00 sshd: ary0012 [priv]
+root     18426     2  0 08:19 ?        00:00:00 [kworker/1:2]
+ary0012  18461 18422  0 08:19 ?        00:00:00 sshd: ary0012@pts/3 
+ary0012  18462 18461  0 08:19 pts/3    00:00:00 -bash
+root     18756  1644  0 08:21 ?        00:00:00 sshd: gma0048 [priv]
+gma0048  18799 18756  0 08:21 ?        00:00:00 sshd: gma0048@pts/4 
+gma0048  18800 18799  0 08:21 pts/4    00:00:00 -bash
+root     19105  1644  0 Sep11 ?        00:00:01 sshd: pb0221 [priv] 
+pb0221   19205 19105  0 Sep11 ?        00:00:01 sshd: pb0221@notty  
+pb0221   19206 19205  0 Sep11 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     19386  1644  0 08:23 ?        00:00:00 sshd: tn0142 [priv] 
+tn0142   19426 19386  0 08:23 ?        00:00:00 sshd: tn0142@notty  
+tn0142   19427 19426  0 08:23 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     19447     2  0 08:26 ?        00:00:00 [kworker/0:1]
+root     19504  1644  0 08:29 ?        00:00:00 sshd: ajb0355 [priv]
+ajb0355  19544 19504  0 08:29 ?        00:00:00 sshd: ajb0355@pts/2 
+ajb0355  19545 19544  0 08:29 pts/2    00:00:00 -bash
+root     19795  1644  0 08:30 ?        00:00:00 sshd: ajb0355 [priv]
+ajb0355  19837 19795  0 08:31 ?        00:00:00 sshd: ajb0355@notty 
+ajb0355  19838 19837  0 08:31 ?        00:00:00 /usr/lib/openssh/sftp-server
+ary0012  19974 18462  0 08:31 pts/3    00:00:00 script recitation2.txt
+ary0012  19976 19974  0 08:31 pts/3    00:00:00 script recitation2.txt
+ary0012  19977 19976  0 08:31 pts/5    00:00:00 bash -i
+root     20101  1644  0 08:31 ?        00:00:00 sshd: ljh0148 [priv]
+ljh0148  20141 20101  0 08:31 ?        00:00:00 sshd: ljh0148@notty 
+ljh0148  20142 20141  0 08:31 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     20145     2  0 08:31 ?        00:00:00 [kworker/0:0]
+root     20179  1644  0 08:32 ?        00:00:00 sshd: jaj0292 [priv]
+root     20190     2  0 08:32 ?        00:00:00 [flush-0:25]
+jaj0292  20225 20179  0 08:32 ?        00:00:00 sshd: jaj0292@pts/9 
+jaj0292  20226 20225  0 08:32 pts/9    00:00:00 -bash
+root     20470  1644  0 08:33 ?        00:00:00 sshd: ljh0148 [priv]
+ljh0148  20512 20470  0 08:33 ?        00:00:00 sshd: ljh0148@pts/10
+ljh0148  20513 20512  0 08:33 pts/10   00:00:00 -bash
+root     20757     2  0 08:33 ?        00:00:00 [kworker/2:2]
+root     20791  1644  0 08:33 ?        00:00:00 sshd: dbb0077 [priv]
+dbb0077  20836 20791  0 08:33 ?        00:00:00 sshd: dbb0077@notty 
+dbb0077  20837 20836  0 08:33 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     20854     2  0 08:34 ?        00:00:00 [kworker/1:1]
+root     20890  1644  0 08:35 ?        00:00:00 sshd: ljh0148 [priv]
+ljh0148  20926 20890  0 08:35 ?        00:00:00 sshd: ljh0148@notty 
+ljh0148  20927 20926  0 08:35 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     20956     2  0 08:36 ?        00:00:00 [kworker/0:2]
+root     20977     2  0 08:38 ?        00:00:00 [kworker/2:0]
+root     20987     2  0 08:39 ?        00:00:00 [kworker/1:0]
+ary0012  20999 19977  0 08:40 pts/5    00:00:00 ps -ef
+root     22223     2  0 Sep13 ?        00:00:00 [kworker/u:2]
+ajm0409  22923     1  0 Sep01 ?        00:00:00 ssh-agent
+root     23585  1644  0 Sep11 ?        00:00:01 sshd: pb0221 [priv] 
+pb0221   23621 23585  0 Sep11 ?        00:00:01 sshd: pb0221@notty  
+pb0221   23622 23621  0 Sep11 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     28529     1  3 Sep17 ?        00:50:44 python /usr/sbin/denyhosts --daemon --purge --config=/etc/denyhosts.conf

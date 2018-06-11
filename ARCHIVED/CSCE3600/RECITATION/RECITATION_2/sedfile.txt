@@ -1,0 +1,44 @@
+Rrw------- 1 ary0012 ary0012  155 Sep 18 08:32 emp1
+This is a new line
+Rrw------- 1 ary0012 ary0012  124 Sep 18 08:32 emp2
+This is a new line
+Rrw------- 1 ary0012 ary0012  513 Sep 18 08:32 emp3
+This is a new line
+Rrw------- 1 ary0012 ary0012   17 Sep 18 08:32 example.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012   39 Sep 18 08:32 file1.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012   82 Sep 18 08:32 file2.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012   74 Sep 18 08:32 helloworld.c
+This is a new line
+Rrw------- 1 ary0012 ary0012 1064 Sep 18 08:32 helloworld.o
+This is a new line
+Rrw------- 1 ary0012 ary0012  130 Sep 18 08:32 INPUT
+This is a new line
+Rrw------- 1 ary0012 ary0012   79 Sep 18 08:32 names2.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012   85 Sep 18 08:32 names.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012    0 Sep 18 08:35 sedfile.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012  326 Sep 18 08:32 sep08A.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  601 Sep 18 08:32 sep08B.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  188 Sep 18 08:32 sep08C.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  316 Sep 18 08:32 sep11A.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  409 Sep 18 08:32 sep11B.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  280 Sep 18 08:32 sep11C.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  181 Sep 18 08:32 sep11D.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  639 Sep 18 08:32 sep13A.c
+This is a new line
+Rrw------- 1 ary0012 ary0012    7 Sep 18 08:34 text.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012    7 Sep 18 08:34 this_is_filler.txt
+This is a new line

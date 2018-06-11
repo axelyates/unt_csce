@@ -1,0 +1,19 @@
+// This will be an "algorithm" based upon a Fortran program 
+// I wrote years ago before I knew what I was doing.
+
+// We have scraps of tape with Air Pollution data on it, due to
+// our instrumented plane crashing.  I was to sort the data by
+// time.
+
+    for each year from 1978 .. 1979
+        for each month from 1 to 12
+            for each day from 1 to 31
+                for each hour from 1 to 24
+                    for each minute from 1 to 60
+                        for each second from 1 to 60
+
+                             read each tape fragment and iff
+                             the time on the fragment matched
+                             the "time" made up of loop indices
+                                      print the data to our sorted
+                                      output file.

@@ -1,0 +1,1 @@
+cmd_/home/ary0012/CS_CLASSES/CSCE4600/Assignment1/simple.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-3.2.0-126-generic/scripts/module-common.lds --build-id  -o /home/ary0012/CS_CLASSES/CSCE4600/Assignment1/simple.ko /home/ary0012/CS_CLASSES/CSCE4600/Assignment1/simple.o /home/ary0012/CS_CLASSES/CSCE4600/Assignment1/simple.mod.o

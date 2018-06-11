@@ -1,0 +1,34 @@
+Script started on Fri 01 Dec 2017 11:42:56 AM CST
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/MINOR_ASSIGNMENTS/MINOR_7[1;31m$[0m ./scanner 
+Lex  		Token		
+----------------------------
+;
+;		SEMICOLON 
+,
+,		COMMA 
+(
+(		L_PARENTHESIS 
+)
+)		R_PARENTHESIS 
+=
+=		ASSIGNMENT_STMT 
+==
+==		EQ_OP 
++
++		PLUS_OP 
+*
+*		MULT_OP 
+-
+-		MINUS_OP 
+1
+1		NUMBER 
+a
+a		NAME		
+^C
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/MINOR_ASSIGNMENTS/MINOR_7[1;31m$[0m clear
+[H[2J[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/MINOR_ASSIGNMENTS/MINOR_7[1;31m$[0m ls
+[0m[1;37;45mcompOpt.c[0m  [1;37;45mlex.yy.c[0m  [01;32mscanner[0m  scanner.lex  typescript  [1;31;40mzcalc.h[0m
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/MINOR_ASSIGNMENTS/MINOR_7[1;31m$[0m exit
+exit
+
+Script done on Fri 01 Dec 2017 11:44:56 AM CST

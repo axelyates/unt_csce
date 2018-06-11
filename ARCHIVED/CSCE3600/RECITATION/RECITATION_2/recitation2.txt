@@ -1,0 +1,862 @@
+Script started on Mon 18 Sep 2017 08:31:33 AM CDT
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION[1;31m$[0m mkdir rec_02
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION[1;31m$[0m cd rec_02/
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m cp !mat02[K[K[K[K[K[K![K~mat0299/pu[Kublic/C[Kcsce3600/fa16[K5[K7/*
+cp: target `/home/mat0299/public/csce3600/fa17/sep13A.c' is not a directory
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m cp ~mat0299/public/csce3600/fa17/*[Kls
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m lscp ~mat0299/public/csce3600/fa17/* /[K.
+cp: cannot open `/home/mat0299/public/csce3600/fa17/a.out' for reading: Permission denied
+cp: cannot open `/home/mat0299/public/csce3600/fa17/float1.sh' for reading: Permission denied
+cp: cannot open `/home/mat0299/public/csce3600/fa17/float2.sh' for reading: Permission denied
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m ls
+emp1  example.txt  [0m[1;37;45mhelloworld.c[0m  names2.txt  [1;37;45msep08B.c[0m  [1;37;45msep11B.c[0m  [1;37;45msep13A.c[0m
+emp2  file1.txt    helloworld.o  names.txt   [1;37;45msep08C.c[0m  [1;37;45msep11C.c[0m
+emp3  file2.txt    INPUT         [1;37;45msep08A.c[0m    [1;37;45msep11A.c[0m  [1;37;45msep11D.c[0m
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m clear
+[H[2J[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m ls
+emp1  example.txt  [0m[1;37;45mhelloworld.c[0m  names2.txt  [1;37;45msep08B.c[0m  [1;37;45msep11B.c[0m  [1;37;45msep13A.c[0m
+emp2  file1.txt    helloworld.o  names.txt   [1;37;45msep08C.c[0m  [1;37;45msep11C.c[0m
+emp3  file2.txt    INPUT         [1;37;45msep08A.c[0m    [1;37;45msep11A.c[0m  [1;37;45msep11D.c[0m
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m ls -l
+total 76
+-rw------- 1 ary0012 ary0012  155 Sep 18 08:32 emp1
+-rw------- 1 ary0012 ary0012  124 Sep 18 08:32 emp2
+-rw------- 1 ary0012 ary0012  513 Sep 18 08:32 emp3
+-rw------- 1 ary0012 ary0012   17 Sep 18 08:32 example.txt
+-rw------- 1 ary0012 ary0012   39 Sep 18 08:32 file1.txt
+-rw------- 1 ary0012 ary0012   82 Sep 18 08:32 file2.txt
+-rw------- 1 ary0012 ary0012   74 Sep 18 08:32 [0m[1;37;45mhelloworld.c[0m
+-rw------- 1 ary0012 ary0012 1064 Sep 18 08:32 helloworld.o
+-rw------- 1 ary0012 ary0012  130 Sep 18 08:32 INPUT
+-rw------- 1 ary0012 ary0012   79 Sep 18 08:32 names2.txt
+-rw------- 1 ary0012 ary0012   85 Sep 18 08:32 names.txt
+-rw------- 1 ary0012 ary0012  326 Sep 18 08:32 [1;37;45msep08A.c[0m
+-rw------- 1 ary0012 ary0012  601 Sep 18 08:32 [1;37;45msep08B.c[0m
+-rw------- 1 ary0012 ary0012  188 Sep 18 08:32 [1;37;45msep08C.c[0m
+-rw------- 1 ary0012 ary0012  316 Sep 18 08:32 [1;37;45msep11A.c[0m
+-rw------- 1 ary0012 ary0012  409 Sep 18 08:32 [1;37;45msep11B.c[0m
+-rw------- 1 ary0012 ary0012  280 Sep 18 08:32 [1;37;45msep11C.c[0m
+-rw------- 1 ary0012 ary0012  181 Sep 18 08:32 [1;37;45msep11D.c[0m
+-rw------- 1 ary0012 ary0012  639 Sep 18 08:32 [1;37;45msep13A.c[0m
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m ls -l > sedfile.txt
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m rm sedfile.txt 
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m m[Kvi text.txt
+[?1000h[?1049h[?1h=[1;51r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[50;1H"text.txt" [New File][>c[2;1H[34m~                                                                                                [3;1H~                                                                                                [4;1H~                                                                                                [5;1H~                                                                                                [6;1H~                                                                                                [7;1H~                                                                                                [8;1H~                                                                                                [9;1H~                                                                                                [10;1H~                                                                                                [11;1H~                                                                                                [12;1H~                                                                                                [13;1H~                                                                                                [14;1H~                                                                                                [15;1H~                                                                                                [16;1H~                                                                                                [17;1H~                                                                                                [18;1H~                                                                                                [19;1H~                                                                                                [20;1H~                                                                                                [21;1H~                                                                                                [22;1H~                                                                                                [23;1H~                                                                                                [24;1H~                                                                                                [25;1H~                                                                                                [26;1H~                                                                                                [27;1H~                                                                                                [28;1H~                                                                                                [29;1H~                                                                                                [30;1H~                                                                                                [31;1H~                                                                                                [32;1H~                                                                                                [33;1H~                                                                                                [34;1H~                                                                                                [35;1H~                                                                                                [36;1H~                                                                                                [37;1H~                                                                                                [38;1H~                                                                                                [39;1H~                                                                                                [40;1H~                                                                                                [41;1H~                                                                                                [42;1H~                                                                                                [43;1H~                                                                                                [44;1H~                                                                                                [45;1H~                                                                                                [46;1H~                                                                                                [47;1H~                                                                                                [48;1H~                                                                                                [m[49;1H[1m[7mtext.txt                                                                       0,0-1          All[1;1H[?12l[?25h[?1000l[?1002h[?25l[m[51;1H[33m-- INSERT --[m[49;82H[1m[7m1   [1;1H[?12l[?25h[?25l[mh[49;10H[1m[7m[+][67C1,2 [1;2H[?12l[?25h[?25l[mhe[49;82H[1m[7m3 [1;3H[?12l[?25h[?25l[mel[49;82H[1m[7m4 [1;4H[?12l[?25h[?25l[mll[49;82H[1m[7m5 [1;5H[?12l[?25h[?25l[mlo[49;82H[1m[7m6 [1;6H[?12l[?25h[?25l[m[2;1H[K[49;80H[1m[7m2,1 [2;1H[?12l[?25h[m[51;1H[K[2;1H[?25l[50;1H[K[49;82H[1m[7m0-1[2;1H[?12l[?25h[?25l[50;1H[m:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l[50;3H[K[50;3H[?12l[?25h[?25l[50;2H[K[50;2H[?12l[?25hw[?25l[?12l[?25hq[?25l[?12l[?25h[?25l[?1002l"text.txt" [New] 2L, 7C written
+
+[?1l>[?12l[?25h[?1049l[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m vi this_is_filler.txt
+[?1000h[?1049h[?1h=[1;51r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[50;1H"this_is_filler.txt" [New File][>c[2;1H[34m~                                                                                                [3;1H~                                                                                                [4;1H~                                                                                                [5;1H~                                                                                                [6;1H~                                                                                                [7;1H~                                                                                                [8;1H~                                                                                                [9;1H~                                                                                                [10;1H~                                                                                                [11;1H~                                                                                                [12;1H~                                                                                                [13;1H~                                                                                                [14;1H~                                                                                                [15;1H~                                                                                                [16;1H~                                                                                                [17;1H~                                                                                                [18;1H~                                                                                                [19;1H~                                                                                                [20;1H~                                                                                                [21;1H~                                                                                                [22;1H~                                                                                                [23;1H~                                                                                                [24;1H~                                                                                                [25;1H~                                                                                                [26;1H~                                                                                                [27;1H~                                                                                                [28;1H~                                                                                                [29;1H~                                                                                                [30;1H~                                                                                                [31;1H~                                                                                                [32;1H~                                                                                                [33;1H~                                                                                                [34;1H~                                                                                                [35;1H~                                                                                                [36;1H~                                                                                                [37;1H~                                                                                                [38;1H~                                                                                                [39;1H~                                                                                                [40;1H~                                                                                                [41;1H~                                                                                                [42;1H~                                                                                                [43;1H~                                                                                                [44;1H~                                                                                                [45;1H~                                                                                                [46;1H~                                                                                                [47;1H~                                                                                                [48;1H~                                                                                                [m[49;1H[1m[7mthis_is_filler.txt                                                             0,0-1          All[1;1H[?12l[?25h[?1000l[?1002h[?25l[m[51;1H[33m-- INSERT --[m[49;82H[1m[7m1   [1;1H[?12l[?25h[?25l[mf[49;20H[1m[7m[+][57C1,2 [1;2H[?12l[?25h[?25l[mfi[49;82H[1m[7m3 [1;3H[?12l[?25h[?25l[mil[49;82H[1m[7m4 [1;4H[?12l[?25h[?25l[mll[49;82H[1m[7m5 [1;5H[?12l[?25h[?25l[mle[49;82H[1m[7m6 [1;6H[?12l[?25h[?25l[mer[49;82H[1m[7m7 [1;7H[?12l[?25h[m[51;1H[K[1;6H[?25l[50;1H[K[49;82H[1m[7m6 [1;6H[?12l[?25h[?25l[50;1H[m:[?12l[?25hw[?25l[?12l[?25hq[?25l[?12l[?25h[?25l[?1002l"this_is_filler.txt" [New] 1L, 7C written
+
+[?1l>[?12l[?25h[?1049l[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m clear
+[H[2J[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m ls
+emp1  example.txt  [0m[1;37;45mhelloworld.c[0m  names2.txt  [1;37;45msep08B.c[0m  [1;37;45msep11B.c[0m  [1;37;45msep13A.c[0m
+emp2  file1.txt    helloworld.o  names.txt   [1;37;45msep08C.c[0m  [1;37;45msep11C.c[0m  text.txt
+emp3  file2.txt    INPUT         [1;37;45msep08A.c[0m    [1;37;45msep11A.c[0m  [1;37;45msep11D.c[0m  this_is_filler.txt
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m ls -l[K[K[K[Kl
+total 92
+drwx------ 2 ary0012 ary0012 4096 Sep 18 08:34 [0m[1;36;4m.[0m/
+drwx------ 3 ary0012 ary0012 4096 Sep 18 08:32 [1;36;4m..[0m/
+-rw------- 1 ary0012 ary0012  155 Sep 18 08:32 emp1
+-rw------- 1 ary0012 ary0012  124 Sep 18 08:32 emp2
+-rw------- 1 ary0012 ary0012  513 Sep 18 08:32 emp3
+-rw------- 1 ary0012 ary0012   17 Sep 18 08:32 example.txt
+-rw------- 1 ary0012 ary0012   39 Sep 18 08:32 file1.txt
+-rw------- 1 ary0012 ary0012   82 Sep 18 08:32 file2.txt
+-rw------- 1 ary0012 ary0012   74 Sep 18 08:32 [1;37;45mhelloworld.c[0m
+-rw------- 1 ary0012 ary0012 1064 Sep 18 08:32 helloworld.o
+-rw------- 1 ary0012 ary0012  130 Sep 18 08:32 INPUT
+-rw------- 1 ary0012 ary0012   79 Sep 18 08:32 names2.txt
+-rw------- 1 ary0012 ary0012   85 Sep 18 08:32 names.txt
+-rw------- 1 ary0012 ary0012  326 Sep 18 08:32 [1;37;45msep08A.c[0m
+-rw------- 1 ary0012 ary0012  601 Sep 18 08:32 [1;37;45msep08B.c[0m
+-rw------- 1 ary0012 ary0012  188 Sep 18 08:32 [1;37;45msep08C.c[0m
+-rw------- 1 ary0012 ary0012  316 Sep 18 08:32 [1;37;45msep11A.c[0m
+-rw------- 1 ary0012 ary0012  409 Sep 18 08:32 [1;37;45msep11B.c[0m
+-rw------- 1 ary0012 ary0012  280 Sep 18 08:32 [1;37;45msep11C.c[0m
+-rw------- 1 ary0012 ary0012  181 Sep 18 08:32 [1;37;45msep11D.c[0m
+-rw------- 1 ary0012 ary0012  639 Sep 18 08:32 [1;37;45msep13A.c[0m
+-rw------- 1 ary0012 ary0012    7 Sep 18 08:34 text.txt
+-rw------- 1 ary0012 ary0012    7 Sep 18 08:34 this_is_filler.txt
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m ls -l .[K> sedfile.txt
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m sed i[K-i "s/^-/R/g" sedfile.txt
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m ls [K[Kl
+total 96
+drwx------ 2 ary0012 ary0012 4096 Sep 18 08:35 [0m[1;36;4m.[0m/
+drwx------ 3 ary0012 ary0012 4096 Sep 18 08:32 [1;36;4m..[0m/
+-rw------- 1 ary0012 ary0012  155 Sep 18 08:32 emp1
+-rw------- 1 ary0012 ary0012  124 Sep 18 08:32 emp2
+-rw------- 1 ary0012 ary0012  513 Sep 18 08:32 emp3
+-rw------- 1 ary0012 ary0012   17 Sep 18 08:32 example.txt
+-rw------- 1 ary0012 ary0012   39 Sep 18 08:32 file1.txt
+-rw------- 1 ary0012 ary0012   82 Sep 18 08:32 file2.txt
+-rw------- 1 ary0012 ary0012   74 Sep 18 08:32 [1;37;45mhelloworld.c[0m
+-rw------- 1 ary0012 ary0012 1064 Sep 18 08:32 helloworld.o
+-rw------- 1 ary0012 ary0012  130 Sep 18 08:32 INPUT
+-rw------- 1 ary0012 ary0012   79 Sep 18 08:32 names2.txt
+-rw------- 1 ary0012 ary0012   85 Sep 18 08:32 names.txt
+-rw------- 1 ary0012 ary0012 1255 Sep 18 08:35 sedfile.txt
+-rw------- 1 ary0012 ary0012  326 Sep 18 08:32 [1;37;45msep08A.c[0m
+-rw------- 1 ary0012 ary0012  601 Sep 18 08:32 [1;37;45msep08B.c[0m
+-rw------- 1 ary0012 ary0012  188 Sep 18 08:32 [1;37;45msep08C.c[0m
+-rw------- 1 ary0012 ary0012  316 Sep 18 08:32 [1;37;45msep11A.c[0m
+-rw------- 1 ary0012 ary0012  409 Sep 18 08:32 [1;37;45msep11B.c[0m
+-rw------- 1 ary0012 ary0012  280 Sep 18 08:32 [1;37;45msep11C.c[0m
+-rw------- 1 ary0012 ary0012  181 Sep 18 08:32 [1;37;45msep11D.c[0m
+-rw------- 1 ary0012 ary0012  639 Sep 18 08:32 [1;37;45msep13A.c[0m
+-rw------- 1 ary0012 ary0012    7 Sep 18 08:34 text.txt
+-rw------- 1 ary0012 ary0012    7 Sep 18 08:34 this_is_filler.txt
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m sed -n 1, [K10p sedfile.txt
+total 84
+Rrw------- 1 ary0012 ary0012  155 Sep 18 08:32 emp1
+Rrw------- 1 ary0012 ary0012  124 Sep 18 08:32 emp2
+Rrw------- 1 ary0012 ary0012  513 Sep 18 08:32 emp3
+Rrw------- 1 ary0012 ary0012   17 Sep 18 08:32 example.txt
+Rrw------- 1 ary0012 ary0012   39 Sep 18 08:32 file1.txt
+Rrw------- 1 ary0012 ary0012   82 Sep 18 08:32 file2.txt
+Rrw------- 1 ary0012 ary0012   74 Sep 18 08:32 helloworld.c
+Rrw------- 1 ary0012 ary0012 1064 Sep 18 08:32 helloworld.o
+Rrw------- 1 ary0012 ary0012  130 Sep 18 08:32 INPUT
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m moer[K[Kre sedfile.txt 
+total 84
+Rrw------- 1 ary0012 ary0012  155 Sep 18 08:32 emp1
+Rrw------- 1 ary0012 ary0012  124 Sep 18 08:32 emp2
+Rrw------- 1 ary0012 ary0012  513 Sep 18 08:32 emp3
+Rrw------- 1 ary0012 ary0012   17 Sep 18 08:32 example.txt
+Rrw------- 1 ary0012 ary0012   39 Sep 18 08:32 file1.txt
+Rrw------- 1 ary0012 ary0012   82 Sep 18 08:32 file2.txt
+Rrw------- 1 ary0012 ary0012   74 Sep 18 08:32 helloworld.c
+Rrw------- 1 ary0012 ary0012 1064 Sep 18 08:32 helloworld.o
+Rrw------- 1 ary0012 ary0012  130 Sep 18 08:32 INPUT
+Rrw------- 1 ary0012 ary0012   79 Sep 18 08:32 names2.txt
+Rrw------- 1 ary0012 ary0012   85 Sep 18 08:32 names.txt
+Rrw------- 1 ary0012 ary0012    0 Sep 18 08:35 sedfile.txt
+Rrw------- 1 ary0012 ary0012  326 Sep 18 08:32 sep08A.c
+Rrw------- 1 ary0012 ary0012  601 Sep 18 08:32 sep08B.c
+Rrw------- 1 ary0012 ary0012  188 Sep 18 08:32 sep08C.c
+Rrw------- 1 ary0012 ary0012  316 Sep 18 08:32 sep11A.c
+Rrw------- 1 ary0012 ary0012  409 Sep 18 08:32 sep11B.c
+Rrw------- 1 ary0012 ary0012  280 Sep 18 08:32 sep11C.c
+Rrw------- 1 ary0012 ary0012  181 Sep 18 08:32 sep11D.c
+Rrw------- 1 ary0012 ary0012  639 Sep 18 08:32 sep13A.c
+Rrw------- 1 ary0012 ary0012    7 Sep 18 08:34 text.txt
+Rrw------- 1 ary0012 ary0012    7 Sep 18 08:34 this_is_filler.txt
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m sed -i ld sedfile.txt 
+sed: -e expression #1, char 2: extra characters after command
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m sed -i ld sedfile.txt [1P[1@1
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m more set[Kdfile.txt 
+Rrw------- 1 ary0012 ary0012  155 Sep 18 08:32 emp1
+Rrw------- 1 ary0012 ary0012  124 Sep 18 08:32 emp2
+Rrw------- 1 ary0012 ary0012  513 Sep 18 08:32 emp3
+Rrw------- 1 ary0012 ary0012   17 Sep 18 08:32 example.txt
+Rrw------- 1 ary0012 ary0012   39 Sep 18 08:32 file1.txt
+Rrw------- 1 ary0012 ary0012   82 Sep 18 08:32 file2.txt
+Rrw------- 1 ary0012 ary0012   74 Sep 18 08:32 helloworld.c
+Rrw------- 1 ary0012 ary0012 1064 Sep 18 08:32 helloworld.o
+Rrw------- 1 ary0012 ary0012  130 Sep 18 08:32 INPUT
+Rrw------- 1 ary0012 ary0012   79 Sep 18 08:32 names2.txt
+Rrw------- 1 ary0012 ary0012   85 Sep 18 08:32 names.txt
+Rrw------- 1 ary0012 ary0012    0 Sep 18 08:35 sedfile.txt
+Rrw------- 1 ary0012 ary0012  326 Sep 18 08:32 sep08A.c
+Rrw------- 1 ary0012 ary0012  601 Sep 18 08:32 sep08B.c
+Rrw------- 1 ary0012 ary0012  188 Sep 18 08:32 sep08C.c
+Rrw------- 1 ary0012 ary0012  316 Sep 18 08:32 sep11A.c
+Rrw------- 1 ary0012 ary0012  409 Sep 18 08:32 sep11B.c
+Rrw------- 1 ary0012 ary0012  280 Sep 18 08:32 sep11C.c
+Rrw------- 1 ary0012 ary0012  181 Sep 18 08:32 sep11D.c
+Rrw------- 1 ary0012 ary0012  639 Sep 18 08:32 sep13A.c
+Rrw------- 1 ary0012 ary0012    7 Sep 18 08:34 text.txt
+Rrw------- 1 ary0012 ary0012    7 Sep 18 08:34 this_is_filler.txt
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m sed -i /[K':) a This is a new line' sedfile.t xt
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m more sedfile.txt 
+Rrw------- 1 ary0012 ary0012  155 Sep 18 08:32 emp1
+This is a new line
+Rrw------- 1 ary0012 ary0012  124 Sep 18 08:32 emp2
+This is a new line
+Rrw------- 1 ary0012 ary0012  513 Sep 18 08:32 emp3
+This is a new line
+Rrw------- 1 ary0012 ary0012   17 Sep 18 08:32 example.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012   39 Sep 18 08:32 file1.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012   82 Sep 18 08:32 file2.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012   74 Sep 18 08:32 helloworld.c
+This is a new line
+Rrw------- 1 ary0012 ary0012 1064 Sep 18 08:32 helloworld.o
+This is a new line
+Rrw------- 1 ary0012 ary0012  130 Sep 18 08:32 INPUT
+This is a new line
+Rrw------- 1 ary0012 ary0012   79 Sep 18 08:32 names2.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012   85 Sep 18 08:32 names.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012    0 Sep 18 08:35 sedfile.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012  326 Sep 18 08:32 sep08A.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  601 Sep 18 08:32 sep08B.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  188 Sep 18 08:32 sep08C.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  316 Sep 18 08:32 sep11A.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  409 Sep 18 08:32 sep11B.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  280 Sep 18 08:32 sep11C.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  181 Sep 18 08:32 sep11D.c
+This is a new line
+Rrw------- 1 ary0012 ary0012  639 Sep 18 08:32 sep13A.c
+This is a new line
+Rrw------- 1 ary0012 ary0012    7 Sep 18 08:34 text.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012    7 Sep 18 08:34 this_is_filler.txt
+This is a new line
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m sed -n 1/[K,10p sedfile.txt 
+Rrw------- 1 ary0012 ary0012  155 Sep 18 08:32 emp1
+This is a new line
+Rrw------- 1 ary0012 ary0012  124 Sep 18 08:32 emp2
+This is a new line
+Rrw------- 1 ary0012 ary0012  513 Sep 18 08:32 emp3
+This is a new line
+Rrw------- 1 ary0012 ary0012   17 Sep 18 08:32 example.txt
+This is a new line
+Rrw------- 1 ary0012 ary0012   39 Sep 18 08:32 file1.txt
+This is a new line
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m ps -ef > awkfile.txt
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m gawk 'NR <= 10' awkfile.txt 
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 Aug28 ?        00:00:10 /sbin/init
+root         2     0  0 Aug28 ?        00:00:01 [kthreadd]
+root         3     2  0 Aug28 ?        00:16:01 [ksoftirqd/0]
+root         6     2  0 Aug28 ?        00:00:06 [migration/0]
+root         7     2  0 Aug28 ?        00:00:11 [watchdog/0]
+root         8     2  0 Aug28 ?        00:00:05 [migration/1]
+root        10     2  0 Aug28 ?        00:00:22 [ksoftirqd/1]
+root        12     2  0 Aug28 ?        00:00:08 [watchdog/1]
+root        13     2  0 Aug28 ?        00:00:04 [migration/2]
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m gawk "[K'END (p[K[K{print NF[KR}' awkfile.txt 
+188
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m whoami
+ary0012
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m gawk 'ary0012 {printNR[K[K RN[K[KNR, $0}' awkfile.txt  [A
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m gawk 'ary0012 {print NR, $0}' awkfile.txt  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C$ary0012 {print NR, $0}' awkfile.txt  [A[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m [C[C[C[C[C[C[C1ary0012 {print NR, $0}' awkfile.txt [A[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m [C[C[C[C[C[C[C[C ary0012 {print NR, $0}' awkfile.txt [A[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m [C[C[C[C[C[C[C[C[C~ary0012 {print NR, $0}' awkfile.t[1@x[A[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m [C[C[C[C[C[C[C[C[C[C ary0012 {print NR, $0}' awkfile.[1@t[A[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m [C[C[C[C[C[C[C[C[C[C[C
+
+1 UID        PID  PPID  C STIME TTY          TIME CMD
+2 root         1     0  0 Aug28 ?        00:00:10 /sbin/init
+3 root         2     0  0 Aug28 ?        00:00:01 [kthreadd]
+4 root         3     2  0 Aug28 ?        00:16:01 [ksoftirqd/0]
+5 root         6     2  0 Aug28 ?        00:00:06 [migration/0]
+6 root         7     2  0 Aug28 ?        00:00:11 [watchdog/0]
+7 root         8     2  0 Aug28 ?        00:00:05 [migration/1]
+8 root        10     2  0 Aug28 ?        00:00:22 [ksoftirqd/1]
+9 root        12     2  0 Aug28 ?        00:00:08 [watchdog/1]
+10 root        13     2  0 Aug28 ?        00:00:04 [migration/2]
+11 root        15     2  0 Aug28 ?        00:00:15 [ksoftirqd/2]
+12 root        16     2  0 Aug28 ?        00:00:07 [watchdog/2]
+13 root        17     2  0 Aug28 ?        00:00:00 [cpuset]
+14 root        18     2  0 Aug28 ?        00:00:00 [khelper]
+15 root        19     2  0 Aug28 ?        00:00:00 [kdevtmpfs]
+16 root        20     2  0 Aug28 ?        00:00:00 [netns]
+17 root        21     2  0 Aug28 ?        00:00:39 [kworker/u:1]
+18 root        22     2  0 Aug28 ?        00:00:04 [sync_supers]
+19 root        23     2  0 Aug28 ?        00:00:00 [bdi-default]
+20 root        24     2  0 Aug28 ?        00:00:00 [kintegrityd]
+21 root        25     2  0 Aug28 ?        00:00:00 [kblockd]
+22 root        26     2  0 Aug28 ?        00:00:00 [ata_sff]
+23 root        27     2  0 Aug28 ?        00:00:00 [khubd]
+24 root        28     2  0 Aug28 ?        00:00:00 [md]
+25 root        30     2  0 Aug28 ?        00:00:01 [khungtaskd]
+26 root        31     2  0 Aug28 ?        00:01:22 [kswapd0]
+27 root        32     2  0 Aug28 ?        00:00:00 [vmstat]
+28 root        33     2  0 Aug28 ?        00:00:00 [ksmd]
+29 root        34     2  0 Aug28 ?        00:00:00 [khugepaged]
+30 root        35     2  0 Aug28 ?        00:00:00 [fsnotify_mark]
+31 root        36     2  0 Aug28 ?        00:00:00 [ecryptfs-kthrea]
+32 root        37     2  0 Aug28 ?        00:00:00 [crypto]
+33 root        45     2  0 Aug28 ?        00:00:00 [kthrotld]
+34 root        46     2  0 Aug28 ?        00:00:00 [scsi_eh_0]
+35 root        47     2  0 Aug28 ?        00:03:51 [scsi_eh_1]
+36 root        68     2  0 Aug28 ?        00:00:00 [devfreq_wq]
+37 root       189     2  0 Aug28 ?        00:00:00 [mpt_poll_0]
+38 root       207     2  0 Aug28 ?        00:00:00 [mpt/0]
+39 root       286     2  0 Aug28 ?        00:00:00 [scsi_eh_2]
+40 root       288     2  0 Aug28 ?        00:00:00 [ttm_swap]
+41 root       339     2  0 Aug28 ?        00:00:27 [jbd2/sda1-8]
+42 root       340     2  0 Aug28 ?        00:00:00 [ext4-dio-unwrit]
+43 root       442     1  0 Aug28 ?        00:00:01 upstart-udev-bridge --daemon
+44 root       444     1  0 Aug28 ?        00:00:01 /sbin/udevd --daemon
+45 root       663     1  0 Aug28 ?        00:00:00 upstart-socket-bridge --daemon
+46 root       705   444  0 Aug28 ?        00:00:01 /sbin/udevd --daemon
+47 root       751     1  0 Aug28 ?        00:00:04 rpcbind -w
+48 root       791     2  0 Aug28 ?        00:00:00 [kpsmoused]
+49 root      1039     2  0 Aug28 ?        00:00:00 [rpciod]
+50 root      1068     2  0 Aug28 ?        00:00:00 [nfsiod]
+51 root      1069   444  0 Aug28 ?        00:00:00 /sbin/udevd --daemon
+52 statd     1080     1  0 Aug28 ?        00:00:00 rpc.statd -L
+53 syslog    1082     1  0 Aug28 ?        00:02:26 rsyslogd -c5
+54 root      1094     1  0 Aug28 ?        00:00:21 rpc.idmapd
+55 102       1150     1  0 Aug28 ?        00:11:21 dbus-daemon --system --fork --activation=upstart
+56 root      1164     1  0 Aug28 ?        00:00:01 /usr/sbin/modem-manager
+57 root      1181     1  0 Aug28 ?        00:00:01 /usr/sbin/cupsd -F
+58 root      1197     1  0 Aug28 ?        00:00:02 /usr/sbin/bluetoothd
+59 root      1200     1  0 Aug28 ?        00:02:55 NetworkManager
+60 root      1271     2  0 Aug28 ?        00:00:00 [krfcommd]
+61 root      1277     1  0 Aug28 ?        00:20:58 /usr/lib/policykit-1/polkitd --no-debug
+62 root      1355     1  0 Aug28 ?        00:21:54 /usr/bin/vmtoolsd
+63 root      1401     1  0 Aug28 tty4     00:00:00 /sbin/getty -8 38400 tty4
+64 root      1405     1  0 Aug28 tty5     00:00:00 /sbin/getty -8 38400 tty5
+65 root      1414     1  0 Aug28 tty2     00:00:00 /sbin/getty -8 38400 tty2
+66 root      1415     1  0 Aug28 tty3     00:00:00 /sbin/getty -8 38400 tty3
+67 root      1417     1  0 Aug28 tty6     00:00:00 /sbin/getty -8 38400 tty6
+68 root      1430     1  0 Aug28 ?        00:00:00 acpid -c /etc/acpi/events -s /var/run/acpid.socket
+69 root      1432     1  0 Aug28 ?        00:00:03 cron
+70 daemon    1434     1  0 Aug28 ?        00:00:00 atd
+71 root      1441     1  0 Aug28 ?        00:00:00 lightdm
+72 root      1445     1  0 Aug28 ?        00:03:16 /usr/sbin/irqbalance
+73 root      1455  1441  0 Aug28 tty7     00:37:07 /usr/bin/X :0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch -background none
+74 whoopsie  1461     1  0 Aug28 ?        00:00:00 whoopsie
+75 root      1480     1  0 Aug28 ?        00:01:51 /usr/sbin/automount
+76 root      1644     1  0 Aug28 ?        00:00:23 /usr/sbin/sshd -D
+77 root      1664  1441  0 Aug28 ?        00:00:00 lightdm --session-child 16 19
+78 root      1667     1  0 Aug28 ?        00:00:18 /usr/lib/accountsservice/accounts-daemon
+79 root      1687     1  0 Aug28 ?        00:04:51 /usr/sbin/console-kit-daemon --no-daemon
+80 lightdm   1761  1664  0 Aug28 ?        00:00:00 /bin/sh /usr/lib/lightdm/lightdm-greeter-session /usr/sbin/unity-greeter
+81 lightdm   1767     1  0 Aug28 ?        00:00:00 //bin/dbus-daemon --fork --print-pid 5 --print-address 8 --session
+82 lightdm   1768  1761  0 Aug28 ?        01:00:04 /usr/sbin/unity-greeter
+83 lightdm   1775     1  0 Aug28 ?        00:00:00 /usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately
+84 lightdm   1780  1775  0 Aug28 ?        00:00:00 /bin/dbus-daemon --config-file=/etc/at-spi2/accessibility.conf --nofork --print-address 3
+85 lightdm   1790     1  0 Aug28 ?        00:00:00 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+86 lightdm   1792     1  0 Aug28 ?        00:00:00 /usr/lib/gvfs/gvfsd
+87 lightdm   1813     1  0 Aug28 ?        00:00:00 /usr/lib/gvfs//gvfs-fuse-daemon -f /var/lib/lightdm/.gvfs
+88 lightdm   1820     1  0 Aug28 ?        00:00:00 /usr/lib/dconf/dconf-service
+89 lightdm   1823     1  0 Aug28 ?        00:00:00 /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+90 root      1831     1  0 Aug28 ?        00:00:11 /usr/lib/upower/upowerd
+91 colord    1879     1  0 Aug28 ?        00:00:12 /usr/lib/i386-linux-gnu/colord/colord
+92 root      1901     2  0 Aug28 ?        00:00:00 [nfsv4.0-svc]
+93 root      3006  1441  0 Aug28 ?        00:00:00 lightdm --session-child 12 19
+94 lightdm   3010     1  0 Aug28 ?        00:00:09 nm-applet
+95 lightdm   3014     1  0 Aug28 ?        00:00:00 /usr/lib/indicator-session/indicator-session-service
+96 lightdm   3016     1  0 Aug28 ?        00:00:11 /usr/lib/indicator-datetime/indicator-datetime-service
+97 lightdm   3019     1  0 Aug28 ?        00:00:00 /usr/lib/indicator-application/indicator-application-service
+98 lightdm   3020     1  0 Aug28 ?        00:00:00 /usr/lib/indicator-sound/indicator-sound-service
+99 ntp       3048     1  0 Aug28 ?        00:02:03 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 120:131
+100 lightdm   3058     1  0 Aug28 ?        00:00:04 /usr/lib/i386-linux-gnu/gconf/gconfd-2
+101 lightdm   3069     1  0 Aug28 ?        00:00:00 /usr/lib/geoclue/geoclue-master
+102 lightdm   3076     1  0 Aug28 ?        00:00:07 /usr/lib/ubuntu-geoip/ubuntu-geoip-provider
+103 lightdm   3083     1  0 Aug28 ?        00:00:01 /usr/bin/pulseaudio --start --log-target=syslog
+104 rtkit     3085     1  0 Aug28 ?        00:00:21 /usr/lib/rtkit/rtkit-daemon
+105 lightdm   3090  3083  0 Aug28 ?        00:00:00 /usr/lib/pulseaudio/pulse/gconf-helper
+106 root      3548     1  0 Aug28 tty1     00:00:00 /sbin/getty -8 38400 tty1
+107 root      9478     2  0 01:01 ?        00:00:08 [kworker/2:1]
+108 rd0253   10643     1  0 Sep12 ?        00:00:00 SCREEN
+109 rd0253   10644 10643  0 Sep12 pts/8    00:00:00 /bin/bash
+110 rd0253   12141     1  0 Sep12 ?        00:00:00 SCREEN
+111 rd0253   12142 12141  0 Sep12 pts/16   00:00:00 /bin/bash
+112 108      12376     1  0 Aug29 ?        00:00:15 /usr/sbin/hald
+113 root     12377 12376  0 Aug29 ?        00:00:00 hald-runner
+114 root     12417 12377  0 Aug29 ?        00:00:00 hald-addon-input: Listening on /dev/input/event1 /dev/input/event0
+115 root     12456 12377  0 Aug29 ?        00:04:40 hald-addon-storage: polling /dev/sr0 (every 2 sec)
+116 108      12461 12377  0 Aug29 ?        00:00:00 hald-addon-acpi: listening on acpid socket /var/run/acpid.socket
+117 root     12462 12377  0 Aug29 ?        00:00:52 hald-addon-storage: no polling on /dev/fd0 because it is explicitly disabled
+118 root     15806     2  0 06:56 ?        00:00:00 [flush-8:0]
+119 root     16039  1644  0 07:13 ?        00:00:00 sshd: als0462 [priv]
+120 als0462  16079 16039  0 07:13 ?        00:00:00 sshd: als0462@pts/0 
+121 als0462  16080 16079  0 07:13 pts/0    00:00:00 -bash
+122 root     16324  1644  0 07:13 ?        00:00:00 sshd: als0462 [priv]
+123 als0462  16360 16324  0 07:13 ?        00:00:00 sshd: als0462@notty 
+124 als0462  16361 16360  0 07:13 ?        00:00:00 /usr/lib/openssh/sftp-server
+125 root     16385  1644  0 07:16 ?        00:00:00 sshd: als0462 [priv]
+126 als0462  16421 16385  0 07:16 ?        00:00:00 sshd: als0462@notty 
+127 als0462  16422 16421  0 07:16 ?        00:00:00 /usr/lib/openssh/sftp-server
+128 root     17362  1644  0 07:57 ?        00:00:00 sshd: ks0593 [priv] 
+129 ks0593   17403 17362  0 07:57 ?        00:00:00 sshd: ks0593@notty  
+130 ks0593   17404 17403  0 07:57 ?        00:00:00 /usr/lib/openssh/sftp-server
+131 root     17524  1644  0 08:07 ?        00:00:00 sshd: ks0593 [priv] 
+132 ks0593   17560 17524  0 08:07 ?        00:00:00 sshd: ks0593@pts/1  
+133 ks0593   17561 17560  0 08:07 pts/1    00:00:00 -bash
+134 root     18378  1644  0 08:18 ?        00:00:00 sshd: ary0012 [priv]
+135 ary0012  18418 18378  0 08:18 ?        00:00:00 sshd: ary0012@notty 
+136 ary0012  18419 18418  0 08:18 ?        00:00:00 /usr/lib/openssh/sftp-server
+137 root     18422  1644  0 08:18 ?        00:00:00 sshd: ary0012 [priv]
+138 root     18426     2  0 08:19 ?        00:00:00 [kworker/1:2]
+139 ary0012  18461 18422  0 08:19 ?        00:00:00 sshd: ary0012@pts/3 
+140 ary0012  18462 18461  0 08:19 pts/3    00:00:00 -bash
+141 root     18756  1644  0 08:21 ?        00:00:00 sshd: gma0048 [priv]
+142 gma0048  18799 18756  0 08:21 ?        00:00:00 sshd: gma0048@pts/4 
+143 gma0048  18800 18799  0 08:21 pts/4    00:00:00 -bash
+144 root     19105  1644  0 Sep11 ?        00:00:01 sshd: pb0221 [priv] 
+145 pb0221   19205 19105  0 Sep11 ?        00:00:01 sshd: pb0221@notty  
+146 pb0221   19206 19205  0 Sep11 ?        00:00:00 /usr/lib/openssh/sftp-server
+147 root     19386  1644  0 08:23 ?        00:00:00 sshd: tn0142 [priv] 
+148 tn0142   19426 19386  0 08:23 ?        00:00:00 sshd: tn0142@notty  
+149 tn0142   19427 19426  0 08:23 ?        00:00:00 /usr/lib/openssh/sftp-server
+150 root     19447     2  0 08:26 ?        00:00:00 [kworker/0:1]
+151 root     19504  1644  0 08:29 ?        00:00:00 sshd: ajb0355 [priv]
+152 ajb0355  19544 19504  0 08:29 ?        00:00:00 sshd: ajb0355@pts/2 
+153 ajb0355  19545 19544  0 08:29 pts/2    00:00:00 -bash
+154 root     19795  1644  0 08:30 ?        00:00:00 sshd: ajb0355 [priv]
+155 ajb0355  19837 19795  0 08:31 ?        00:00:00 sshd: ajb0355@notty 
+156 ajb0355  19838 19837  0 08:31 ?        00:00:00 /usr/lib/openssh/sftp-server
+157 ary0012  19974 18462  0 08:31 pts/3    00:00:00 script recitation2.txt
+158 ary0012  19976 19974  0 08:31 pts/3    00:00:00 script recitation2.txt
+159 ary0012  19977 19976  0 08:31 pts/5    00:00:00 bash -i
+160 root     20101  1644  0 08:31 ?        00:00:00 sshd: ljh0148 [priv]
+161 ljh0148  20141 20101  0 08:31 ?        00:00:00 sshd: ljh0148@notty 
+162 ljh0148  20142 20141  0 08:31 ?        00:00:00 /usr/lib/openssh/sftp-server
+163 root     20145     2  0 08:31 ?        00:00:00 [kworker/0:0]
+164 root     20179  1644  0 08:32 ?        00:00:00 sshd: jaj0292 [priv]
+165 root     20190     2  0 08:32 ?        00:00:00 [flush-0:25]
+166 jaj0292  20225 20179  0 08:32 ?        00:00:00 sshd: jaj0292@pts/9 
+167 jaj0292  20226 20225  0 08:32 pts/9    00:00:00 -bash
+168 root     20470  1644  0 08:33 ?        00:00:00 sshd: ljh0148 [priv]
+169 ljh0148  20512 20470  0 08:33 ?        00:00:00 sshd: ljh0148@pts/10
+170 ljh0148  20513 20512  0 08:33 pts/10   00:00:00 -bash
+171 root     20757     2  0 08:33 ?        00:00:00 [kworker/2:2]
+172 root     20791  1644  0 08:33 ?        00:00:00 sshd: dbb0077 [priv]
+173 dbb0077  20836 20791  0 08:33 ?        00:00:00 sshd: dbb0077@notty 
+174 dbb0077  20837 20836  0 08:33 ?        00:00:00 /usr/lib/openssh/sftp-server
+175 root     20854     2  0 08:34 ?        00:00:00 [kworker/1:1]
+176 root     20890  1644  0 08:35 ?        00:00:00 sshd: ljh0148 [priv]
+177 ljh0148  20926 20890  0 08:35 ?        00:00:00 sshd: ljh0148@notty 
+178 ljh0148  20927 20926  0 08:35 ?        00:00:00 /usr/lib/openssh/sftp-server
+179 root     20956     2  0 08:36 ?        00:00:00 [kworker/0:2]
+180 root     20977     2  0 08:38 ?        00:00:00 [kworker/2:0]
+181 root     20987     2  0 08:39 ?        00:00:00 [kworker/1:0]
+182 ary0012  20999 19977  0 08:40 pts/5    00:00:00 ps -ef
+183 root     22223     2  0 Sep13 ?        00:00:00 [kworker/u:2]
+184 ajm0409  22923     1  0 Sep01 ?        00:00:00 ssh-agent
+185 root     23585  1644  0 Sep11 ?        00:00:01 sshd: pb0221 [priv] 
+186 pb0221   23621 23585  0 Sep11 ?        00:00:01 sshd: pb0221@notty  
+187 pb0221   23622 23621  0 Sep11 ?        00:00:00 /usr/lib/openssh/sftp-server
+188 root     28529     1  3 Sep17 ?        00:50:44 python /usr/sbin/denyhosts --daemon --purge --config=/etc/denyhosts.conf
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m gawk 'NF > 8 {print NR, NF}' awkfile.txt 
+43 9
+44 9
+45 9
+46 9
+47 9
+51 9
+52 9
+53 9
+55 11
+57 9
+61 9
+63 11
+64 11
+65 11
+66 11
+67 11
+68 12
+73 17
+76 9
+77 11
+79 9
+80 10
+81 14
+83 9
+84 12
+85 9
+87 10
+93 11
+99 13
+103 10
+106 11
+114 12
+115 13
+116 13
+117 17
+119 10
+120 9
+122 10
+123 9
+125 10
+126 9
+128 10
+129 9
+131 10
+132 9
+134 10
+135 9
+137 10
+139 9
+141 10
+142 9
+144 10
+145 9
+147 10
+148 9
+151 10
+152 9
+154 10
+155 9
+157 9
+158 9
+159 9
+160 10
+161 9
+164 10
+166 9
+168 10
+169 9
+172 10
+173 9
+176 10
+177 9
+182 9
+185 10
+186 9
+188 12
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m gawk 'NF <[K> 8 {fi[Kor(i = 9; i <= NF; i++) pri nt NR, NF, $i};[K' awkfile.txt 
+43 9 --daemon
+44 9 --daemon
+45 9 --daemon
+46 9 --daemon
+47 9 -w
+51 9 --daemon
+52 9 -L
+53 9 -c5
+55 11 --system
+55 11 --fork
+55 11 --activation=upstart
+57 9 -F
+61 9 --no-debug
+63 11 -8
+63 11 38400
+63 11 tty4
+64 11 -8
+64 11 38400
+64 11 tty5
+65 11 -8
+65 11 38400
+65 11 tty2
+66 11 -8
+66 11 38400
+66 11 tty3
+67 11 -8
+67 11 38400
+67 11 tty6
+68 12 -c
+68 12 /etc/acpi/events
+68 12 -s
+68 12 /var/run/acpid.socket
+73 17 :0
+73 17 -auth
+73 17 /var/run/lightdm/root/:0
+73 17 -nolisten
+73 17 tcp
+73 17 vt7
+73 17 -novtswitch
+73 17 -background
+73 17 none
+76 9 -D
+77 11 --session-child
+77 11 16
+77 11 19
+79 9 --no-daemon
+80 10 /usr/lib/lightdm/lightdm-greeter-session
+80 10 /usr/sbin/unity-greeter
+81 14 --fork
+81 14 --print-pid
+81 14 5
+81 14 --print-address
+81 14 8
+81 14 --session
+83 9 --launch-immediately
+84 12 --config-file=/etc/at-spi2/accessibility.conf
+84 12 --nofork
+84 12 --print-address
+84 12 3
+85 9 --use-gnome-session
+87 10 -f
+87 10 /var/lib/lightdm/.gvfs
+93 11 --session-child
+93 11 12
+93 11 19
+99 13 -p
+99 13 /var/run/ntpd.pid
+99 13 -g
+99 13 -u
+99 13 120:131
+103 10 --start
+103 10 --log-target=syslog
+106 11 -8
+106 11 38400
+106 11 tty1
+114 12 Listening
+114 12 on
+114 12 /dev/input/event1
+114 12 /dev/input/event0
+115 13 polling
+115 13 /dev/sr0
+115 13 (every
+115 13 2
+115 13 sec)
+116 13 listening
+116 13 on
+116 13 acpid
+116 13 socket
+116 13 /var/run/acpid.socket
+117 17 no
+117 17 polling
+117 17 on
+117 17 /dev/fd0
+117 17 because
+117 17 it
+117 17 is
+117 17 explicitly
+117 17 disabled
+119 10 als0462
+119 10 [priv]
+120 9 als0462@pts/0
+122 10 als0462
+122 10 [priv]
+123 9 als0462@notty
+125 10 als0462
+125 10 [priv]
+126 9 als0462@notty
+128 10 ks0593
+128 10 [priv]
+129 9 ks0593@notty
+131 10 ks0593
+131 10 [priv]
+132 9 ks0593@pts/1
+134 10 ary0012
+134 10 [priv]
+135 9 ary0012@notty
+137 10 ary0012
+137 10 [priv]
+139 9 ary0012@pts/3
+141 10 gma0048
+141 10 [priv]
+142 9 gma0048@pts/4
+144 10 pb0221
+144 10 [priv]
+145 9 pb0221@notty
+147 10 tn0142
+147 10 [priv]
+148 9 tn0142@notty
+151 10 ajb0355
+151 10 [priv]
+152 9 ajb0355@pts/2
+154 10 ajb0355
+154 10 [priv]
+155 9 ajb0355@notty
+157 9 recitation2.txt
+158 9 recitation2.txt
+159 9 -i
+160 10 ljh0148
+160 10 [priv]
+161 9 ljh0148@notty
+164 10 jaj0292
+164 10 [priv]
+166 9 jaj0292@pts/9
+168 10 ljh0148
+168 10 [priv]
+169 9 ljh0148@pts/10
+172 10 dbb0077
+172 10 [priv]
+173 9 dbb0077@notty
+176 10 ljh0148
+176 10 [priv]
+177 9 ljh0148@notty
+182 9 -ef
+185 10 pb0221
+185 10 [priv]
+186 9 pb0221@notty
+188 12 /usr/sbin/denyhosts
+188 12 --daemon
+188 12 --purge
+188 12 --config=/etc/denyhosts.conf
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m gawk 'Be[KEGIN {OFS = "\tj[K"}; ([K{print $1, $2[K3, $ 2, $4, $5, $6, $7, $8}' awkfile.txt [K
+UID	PPID	PID	C	STIME	TTY	TIME	CMD
+root	0	1	0	Aug28	?	00:00:10	/sbin/init
+root	0	2	0	Aug28	?	00:00:01	[kthreadd]
+root	2	3	0	Aug28	?	00:16:01	[ksoftirqd/0]
+root	2	6	0	Aug28	?	00:00:06	[migration/0]
+root	2	7	0	Aug28	?	00:00:11	[watchdog/0]
+root	2	8	0	Aug28	?	00:00:05	[migration/1]
+root	2	10	0	Aug28	?	00:00:22	[ksoftirqd/1]
+root	2	12	0	Aug28	?	00:00:08	[watchdog/1]
+root	2	13	0	Aug28	?	00:00:04	[migration/2]
+root	2	15	0	Aug28	?	00:00:15	[ksoftirqd/2]
+root	2	16	0	Aug28	?	00:00:07	[watchdog/2]
+root	2	17	0	Aug28	?	00:00:00	[cpuset]
+root	2	18	0	Aug28	?	00:00:00	[khelper]
+root	2	19	0	Aug28	?	00:00:00	[kdevtmpfs]
+root	2	20	0	Aug28	?	00:00:00	[netns]
+root	2	21	0	Aug28	?	00:00:39	[kworker/u:1]
+root	2	22	0	Aug28	?	00:00:04	[sync_supers]
+root	2	23	0	Aug28	?	00:00:00	[bdi-default]
+root	2	24	0	Aug28	?	00:00:00	[kintegrityd]
+root	2	25	0	Aug28	?	00:00:00	[kblockd]
+root	2	26	0	Aug28	?	00:00:00	[ata_sff]
+root	2	27	0	Aug28	?	00:00:00	[khubd]
+root	2	28	0	Aug28	?	00:00:00	[md]
+root	2	30	0	Aug28	?	00:00:01	[khungtaskd]
+root	2	31	0	Aug28	?	00:01:22	[kswapd0]
+root	2	32	0	Aug28	?	00:00:00	[vmstat]
+root	2	33	0	Aug28	?	00:00:00	[ksmd]
+root	2	34	0	Aug28	?	00:00:00	[khugepaged]
+root	2	35	0	Aug28	?	00:00:00	[fsnotify_mark]
+root	2	36	0	Aug28	?	00:00:00	[ecryptfs-kthrea]
+root	2	37	0	Aug28	?	00:00:00	[crypto]
+root	2	45	0	Aug28	?	00:00:00	[kthrotld]
+root	2	46	0	Aug28	?	00:00:00	[scsi_eh_0]
+root	2	47	0	Aug28	?	00:03:51	[scsi_eh_1]
+root	2	68	0	Aug28	?	00:00:00	[devfreq_wq]
+root	2	189	0	Aug28	?	00:00:00	[mpt_poll_0]
+root	2	207	0	Aug28	?	00:00:00	[mpt/0]
+root	2	286	0	Aug28	?	00:00:00	[scsi_eh_2]
+root	2	288	0	Aug28	?	00:00:00	[ttm_swap]
+root	2	339	0	Aug28	?	00:00:27	[jbd2/sda1-8]
+root	2	340	0	Aug28	?	00:00:00	[ext4-dio-unwrit]
+root	1	442	0	Aug28	?	00:00:01	upstart-udev-bridge
+root	1	444	0	Aug28	?	00:00:01	/sbin/udevd
+root	1	663	0	Aug28	?	00:00:00	upstart-socket-bridge
+root	444	705	0	Aug28	?	00:00:01	/sbin/udevd
+root	1	751	0	Aug28	?	00:00:04	rpcbind
+root	2	791	0	Aug28	?	00:00:00	[kpsmoused]
+root	2	1039	0	Aug28	?	00:00:00	[rpciod]
+root	2	1068	0	Aug28	?	00:00:00	[nfsiod]
+root	444	1069	0	Aug28	?	00:00:00	/sbin/udevd
+statd	1	1080	0	Aug28	?	00:00:00	rpc.statd
+syslog	1	1082	0	Aug28	?	00:02:26	rsyslogd
+root	1	1094	0	Aug28	?	00:00:21	rpc.idmapd
+102	1	1150	0	Aug28	?	00:11:21	dbus-daemon
+root	1	1164	0	Aug28	?	00:00:01	/usr/sbin/modem-manager
+root	1	1181	0	Aug28	?	00:00:01	/usr/sbin/cupsd
+root	1	1197	0	Aug28	?	00:00:02	/usr/sbin/bluetoothd
+root	1	1200	0	Aug28	?	00:02:55	NetworkManager
+root	2	1271	0	Aug28	?	00:00:00	[krfcommd]
+root	1	1277	0	Aug28	?	00:20:58	/usr/lib/policykit-1/polkitd
+root	1	1355	0	Aug28	?	00:21:54	/usr/bin/vmtoolsd
+root	1	1401	0	Aug28	tty4	00:00:00	/sbin/getty
+root	1	1405	0	Aug28	tty5	00:00:00	/sbin/getty
+root	1	1414	0	Aug28	tty2	00:00:00	/sbin/getty
+root	1	1415	0	Aug28	tty3	00:00:00	/sbin/getty
+root	1	1417	0	Aug28	tty6	00:00:00	/sbin/getty
+root	1	1430	0	Aug28	?	00:00:00	acpid
+root	1	1432	0	Aug28	?	00:00:03	cron
+daemon	1	1434	0	Aug28	?	00:00:00	atd
+root	1	1441	0	Aug28	?	00:00:00	lightdm
+root	1	1445	0	Aug28	?	00:03:16	/usr/sbin/irqbalance
+root	1441	1455	0	Aug28	tty7	00:37:07	/usr/bin/X
+whoopsie	1	1461	0	Aug28	?	00:00:00	whoopsie
+root	1	1480	0	Aug28	?	00:01:51	/usr/sbin/automount
+root	1	1644	0	Aug28	?	00:00:23	/usr/sbin/sshd
+root	1441	1664	0	Aug28	?	00:00:00	lightdm
+root	1	1667	0	Aug28	?	00:00:18	/usr/lib/accountsservice/accounts-daemon
+root	1	1687	0	Aug28	?	00:04:51	/usr/sbin/console-kit-daemon
+lightdm	1664	1761	0	Aug28	?	00:00:00	/bin/sh
+lightdm	1	1767	0	Aug28	?	00:00:00	//bin/dbus-daemon
+lightdm	1761	1768	0	Aug28	?	01:00:04	/usr/sbin/unity-greeter
+lightdm	1	1775	0	Aug28	?	00:00:00	/usr/lib/at-spi2-core/at-spi-bus-launcher
+lightdm	1775	1780	0	Aug28	?	00:00:00	/bin/dbus-daemon
+lightdm	1	1790	0	Aug28	?	00:00:00	/usr/lib/at-spi2-core/at-spi2-registryd
+lightdm	1	1792	0	Aug28	?	00:00:00	/usr/lib/gvfs/gvfsd
+lightdm	1	1813	0	Aug28	?	00:00:00	/usr/lib/gvfs//gvfs-fuse-daemon
+lightdm	1	1820	0	Aug28	?	00:00:00	/usr/lib/dconf/dconf-service
+lightdm	1	1823	0	Aug28	?	00:00:00	/usr/lib/gnome-settings-daemon/gnome-settings-daemon
+root	1	1831	0	Aug28	?	00:00:11	/usr/lib/upower/upowerd
+colord	1	1879	0	Aug28	?	00:00:12	/usr/lib/i386-linux-gnu/colord/colord
+root	2	1901	0	Aug28	?	00:00:00	[nfsv4.0-svc]
+root	1441	3006	0	Aug28	?	00:00:00	lightdm
+lightdm	1	3010	0	Aug28	?	00:00:09	nm-applet
+lightdm	1	3014	0	Aug28	?	00:00:00	/usr/lib/indicator-session/indicator-session-service
+lightdm	1	3016	0	Aug28	?	00:00:11	/usr/lib/indicator-datetime/indicator-datetime-service
+lightdm	1	3019	0	Aug28	?	00:00:00	/usr/lib/indicator-application/indicator-application-service
+lightdm	1	3020	0	Aug28	?	00:00:00	/usr/lib/indicator-sound/indicator-sound-service
+ntp	1	3048	0	Aug28	?	00:02:03	/usr/sbin/ntpd
+lightdm	1	3058	0	Aug28	?	00:00:04	/usr/lib/i386-linux-gnu/gconf/gconfd-2
+lightdm	1	3069	0	Aug28	?	00:00:00	/usr/lib/geoclue/geoclue-master
+lightdm	1	3076	0	Aug28	?	00:00:07	/usr/lib/ubuntu-geoip/ubuntu-geoip-provider
+lightdm	1	3083	0	Aug28	?	00:00:01	/usr/bin/pulseaudio
+rtkit	1	3085	0	Aug28	?	00:00:21	/usr/lib/rtkit/rtkit-daemon
+lightdm	3083	3090	0	Aug28	?	00:00:00	/usr/lib/pulseaudio/pulse/gconf-helper
+root	1	3548	0	Aug28	tty1	00:00:00	/sbin/getty
+root	2	9478	0	01:01	?	00:00:08	[kworker/2:1]
+rd0253	1	10643	0	Sep12	?	00:00:00	SCREEN
+rd0253	10643	10644	0	Sep12	pts/8	00:00:00	/bin/bash
+rd0253	1	12141	0	Sep12	?	00:00:00	SCREEN
+rd0253	12141	12142	0	Sep12	pts/16	00:00:00	/bin/bash
+108	1	12376	0	Aug29	?	00:00:15	/usr/sbin/hald
+root	12376	12377	0	Aug29	?	00:00:00	hald-runner
+root	12377	12417	0	Aug29	?	00:00:00	hald-addon-input:
+root	12377	12456	0	Aug29	?	00:04:40	hald-addon-storage:
+108	12377	12461	0	Aug29	?	00:00:00	hald-addon-acpi:
+root	12377	12462	0	Aug29	?	00:00:52	hald-addon-storage:
+root	2	15806	0	06:56	?	00:00:00	[flush-8:0]
+root	1644	16039	0	07:13	?	00:00:00	sshd:
+als0462	16039	16079	0	07:13	?	00:00:00	sshd:
+als0462	16079	16080	0	07:13	pts/0	00:00:00	-bash
+root	1644	16324	0	07:13	?	00:00:00	sshd:
+als0462	16324	16360	0	07:13	?	00:00:00	sshd:
+als0462	16360	16361	0	07:13	?	00:00:00	/usr/lib/openssh/sftp-server
+root	1644	16385	0	07:16	?	00:00:00	sshd:
+als0462	16385	16421	0	07:16	?	00:00:00	sshd:
+als0462	16421	16422	0	07:16	?	00:00:00	/usr/lib/openssh/sftp-server
+root	1644	17362	0	07:57	?	00:00:00	sshd:
+ks0593	17362	17403	0	07:57	?	00:00:00	sshd:
+ks0593	17403	17404	0	07:57	?	00:00:00	/usr/lib/openssh/sftp-server
+root	1644	17524	0	08:07	?	00:00:00	sshd:
+ks0593	17524	17560	0	08:07	?	00:00:00	sshd:
+ks0593	17560	17561	0	08:07	pts/1	00:00:00	-bash
+root	1644	18378	0	08:18	?	00:00:00	sshd:
+ary0012	18378	18418	0	08:18	?	00:00:00	sshd:
+ary0012	18418	18419	0	08:18	?	00:00:00	/usr/lib/openssh/sftp-server
+root	1644	18422	0	08:18	?	00:00:00	sshd:
+root	2	18426	0	08:19	?	00:00:00	[kworker/1:2]
+ary0012	18422	18461	0	08:19	?	00:00:00	sshd:
+ary0012	18461	18462	0	08:19	pts/3	00:00:00	-bash
+root	1644	18756	0	08:21	?	00:00:00	sshd:
+gma0048	18756	18799	0	08:21	?	00:00:00	sshd:
+gma0048	18799	18800	0	08:21	pts/4	00:00:00	-bash
+root	1644	19105	0	Sep11	?	00:00:01	sshd:
+pb0221	19105	19205	0	Sep11	?	00:00:01	sshd:
+pb0221	19205	19206	0	Sep11	?	00:00:00	/usr/lib/openssh/sftp-server
+root	1644	19386	0	08:23	?	00:00:00	sshd:
+tn0142	19386	19426	0	08:23	?	00:00:00	sshd:
+tn0142	19426	19427	0	08:23	?	00:00:00	/usr/lib/openssh/sftp-server
+root	2	19447	0	08:26	?	00:00:00	[kworker/0:1]
+root	1644	19504	0	08:29	?	00:00:00	sshd:
+ajb0355	19504	19544	0	08:29	?	00:00:00	sshd:
+ajb0355	19544	19545	0	08:29	pts/2	00:00:00	-bash
+root	1644	19795	0	08:30	?	00:00:00	sshd:
+ajb0355	19795	19837	0	08:31	?	00:00:00	sshd:
+ajb0355	19837	19838	0	08:31	?	00:00:00	/usr/lib/openssh/sftp-server
+ary0012	18462	19974	0	08:31	pts/3	00:00:00	script
+ary0012	19974	19976	0	08:31	pts/3	00:00:00	script
+ary0012	19976	19977	0	08:31	pts/5	00:00:00	bash
+root	1644	20101	0	08:31	?	00:00:00	sshd:
+ljh0148	20101	20141	0	08:31	?	00:00:00	sshd:
+ljh0148	20141	20142	0	08:31	?	00:00:00	/usr/lib/openssh/sftp-server
+root	2	20145	0	08:31	?	00:00:00	[kworker/0:0]
+root	1644	20179	0	08:32	?	00:00:00	sshd:
+root	2	20190	0	08:32	?	00:00:00	[flush-0:25]
+jaj0292	20179	20225	0	08:32	?	00:00:00	sshd:
+jaj0292	20225	20226	0	08:32	pts/9	00:00:00	-bash
+root	1644	20470	0	08:33	?	00:00:00	sshd:
+ljh0148	20470	20512	0	08:33	?	00:00:00	sshd:
+ljh0148	20512	20513	0	08:33	pts/10	00:00:00	-bash
+root	2	20757	0	08:33	?	00:00:00	[kworker/2:2]
+root	1644	20791	0	08:33	?	00:00:00	sshd:
+dbb0077	20791	20836	0	08:33	?	00:00:00	sshd:
+dbb0077	20836	20837	0	08:33	?	00:00:00	/usr/lib/openssh/sftp-server
+root	2	20854	0	08:34	?	00:00:00	[kworker/1:1]
+root	1644	20890	0	08:35	?	00:00:00	sshd:
+ljh0148	20890	20926	0	08:35	?	00:00:00	sshd:
+ljh0148	20926	20927	0	08:35	?	00:00:00	/usr/lib/openssh/sftp-server
+root	2	20956	0	08:36	?	00:00:00	[kworker/0:2]
+root	2	20977	0	08:38	?	00:00:00	[kworker/2:0]
+root	2	20987	0	08:39	?	00:00:00	[kworker/1:0]
+ary0012	19977	20999	0	08:40	pts/5	00:00:00	ps
+root	2	22223	0	Sep13	?	00:00:00	[kworker/u:2]
+ajm0409	1	22923	0	Sep01	?	00:00:00	ssh-agent
+root	1644	23585	0	Sep11	?	00:00:01	sshd:
+pb0221	23585	23621	0	Sep11	?	00:00:01	sshd:
+pb0221	23621	23622	0	Sep11	?	00:00:00	/usr/lib/openssh/sftp-server
+root	1	28529	3	Sep17	?	00:50:44	python
+[1;36mary0012[1;31m@[1;32mcse01:[1;35m~/CS_CLASSES/CSCE3600/RECITATION/rec_02[1;31m$[0m exit
+exit
+
+Script done on Mon 18 Sep 2017 08:46:47 AM CDT

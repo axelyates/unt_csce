@@ -1,0 +1,188 @@
+import java_cup.runtime.*;
+
+action code {: SymbolTable currentEnv, env; :};
+
+terminal String ID;
+terminal String INTEGER;
+terminal String LT, LE, GT, GE, EQ, NE;
+terminal String PLUS, MINUS;
+terminal String TIMES, SLASH;
+terminal SEMICOLON, PERIOD, COMMA, LPAREN, RPAREN, ASSIGN;
+terminal BEGIN, CALL, CONST, DO, END, IF, ODD, PROC, THEN, VAR, WHILE;
+
+non terminal Code program;
+non terminal Code block;
+non terminal constDecl;
+non terminal constAssignmentList;
+non terminal varDecl;
+non terminal identList;
+non terminal procDecl;
+non terminal String statement;
+non terminal String statementList;
+non terminal String whileLabel;
+non terminal ConditionCode condition;
+non terminal ExpressionCode expression;
+non terminal String relation;
+non terminal ExpressionCode term;
+non terminal String addingOperator;
+non terminal ExpressionCode factor;
+non terminal String multiplyingOperator;
+
+start with program;
+
+program ::= block:blockCode PERIOD {: RESULT = blockCode; :} ;
+
+block ::= 
+     {: 
+       currentEnv = env;         /* save current env */
+       env = new SymbolTable (); /* start new scope */
+     :} 
+     constDecl varDecl procDecl 
+     {:
+       Code . initLabel ();
+       Code . initTemp ();
+     :}
+     statement:code
+     {: 
+       RESULT = new Code (env, code); 
+       env = currentEnv; /* restore env */ 
+     :} ;
+
+constDecl ::= CONST constAssignmentList SEMICOLON | ;
+
+constAssignmentList ::= 
+      ID:id EQ INTEGER:integer 
+        {: env . enterConst (id, Integer . parseInt (integer)); :}
+    | constAssignmentList COMMA ID:id EQ INTEGER:integer
+        {: env . enterConst (id, Integer . parseInt (integer)); :}
+      ;
+
+varDecl ::= VAR identList SEMICOLON | ;
+
+identList ::= ID:id {: env . enterVar (id); :}
+    | identList COMMA ID:id {: env . enterVar (id); :} ;
+
+procDecl ::= 
+      procDecl PROC ID:id SEMICOLON 
+      {: env . enterProc (id); /* to allow recursive calls  */ :}
+      block:blockCode SEMICOLON 
+      {: env . enterProc (id, blockCode . env (), blockCode . code ()); :}
+    | ;
+
+statement ::= 
+      ID:id ASSIGN expression:exprCode
+      {:
+        RESULT = exprCode . code () 
+          + "  " + id + " = " + exprCode . place () + ";\n";
+      :}
+    | CALL ID:id
+      {:
+        RESULT = "  " + id + " ();\n";
+      :}
+    | BEGIN statementList:code END 
+      {:
+        RESULT = code;
+      :}
+    | IF condition:condCode THEN statement:stmtCode
+      {:
+        String elseLabel = condCode . falseLabel ();
+        RESULT = condCode . code () + stmtCode + elseLabel + ":\n";
+      :}
+    | WHILE whileLabel:loopEntryLabel condition:condCode DO statement:stmtCode
+      {:
+        String loopExitLabel = condCode . falseLabel ();
+        RESULT = loopEntryLabel + ":\n" 
+          + condCode . code () 
+          + stmtCode
+          + "  goto " + loopEntryLabel + ";\n"
+          + loopExitLabel + ":\n";
+      :}
+    | {: RESULT = ""; :} ;
+
+whileLabel ::= {: RESULT = Code . newLabel (); :} ;
+
+statementList ::= statement:code {: RESULT = code; :}
+    | statementList:stmtListCode SEMICOLON statement:stmtCode 
+      {:
+        RESULT = stmtListCode + stmtCode;
+      :} ;
+
+condition ::= 
+      ODD expression:exprCode 
+      {: 
+        String trueLabel = Code . newLabel ();
+        String falseLabel = Code . newLabel();
+        RESULT = new ConditionCode (exprCode . code ()
+          + "  if (" + exprCode . place () + " % 2 != 0) goto " + trueLabel + ";\n"
+          + "  goto " + falseLabel + ";\n"
+          + trueLabel + ":\n", trueLabel, falseLabel);
+      :}
+    | expression:exprCode1 relation:op expression:exprCode2 
+      {:
+        String trueLabel = Code . newLabel ();
+        String falseLabel = Code . newLabel();
+        RESULT = new ConditionCode (exprCode1 . code () + exprCode2 . code () 
+          + "  if (" + exprCode1 . place () + " " + op + " " + exprCode2 . place () 
+          + ") goto " + trueLabel + ";\n"
+          + "  goto " + falseLabel + ";\n"
+          + trueLabel + ":\n", trueLabel, falseLabel);
+      :} ;
+
+relation ::= 
+      EQ {: RESULT = "=="; :}
+    | NE {: RESULT = "!="; :}
+    | LT {: RESULT = "<"; :}
+    | GT {: RESULT = ">"; :}
+    | LE {: RESULT = "<="; :}
+    | GE {: RESULT = ">="; :} ;
+
+expression ::= term:termCode {: RESULT = termCode; :}
+    | addingOperator:op term:termCode
+      {:
+        String exprTemp = Code . newTemp ();
+        env . enterVar (exprTemp);
+        RESULT = new ExpressionCode (termCode . code ()
+          + "  " + exprTemp + " = " + op + termCode . place () + ";\n", exprTemp);
+      :}
+    | expression:exprCode addingOperator:op term:termCode
+      {:
+        String exprTemp = Code . newTemp ();
+        env . enterVar (exprTemp);
+        RESULT = new ExpressionCode (exprCode . code () + termCode . code ()
+          + "  " + exprTemp + " = " + exprCode . place () + " " + op + " " 
+                                    + termCode . place () + ";\n", exprTemp);
+      :} ;
+
+addingOperator ::= PLUS {: RESULT = "+"; :} | MINUS {: RESULT = "-"; :} ;
+
+term ::= 
+      factor:factorCode {: RESULT = factorCode; :}
+    | term:termCode multiplyingOperator:op factor:factorCode 
+      {:
+        String termTemp = Code . newTemp ();
+        env . enterVar (termTemp);
+        RESULT = new ExpressionCode (termCode . code () + factorCode . code ()
+          + "  " + termTemp + " = " + termCode . place () + " " + op + " " 
+                                    + factorCode . place () + ";\n", termTemp);
+      :} ;
+
+multiplyingOperator ::= TIMES {: RESULT = "*"; :} | SLASH {: RESULT = "/"; :} ;
+
+factor ::= 
+      ID:id 
+      {:
+        SymbolTableEntry entry = env . entry (id);
+        if (entry == null)
+          ErrorMessage . print ("id " + id + " is not declared");
+        if (entry . category () == Category . CONSTANT)
+          RESULT = new ExpressionCode ("", 
+            Integer . toString (entry . value ()));
+        else if (entry . category () == Category . VARIABLE)
+          RESULT = new ExpressionCode ("", id);
+        else {
+          ErrorMessage . print ("constant or variable id expected");
+          RESULT = null;
+        }
+      :}
+    | INTEGER:intval {: RESULT = new ExpressionCode ("", intval); :}
+    | LPAREN expression:exprCode RPAREN {: RESULT = exprCode; :} ;

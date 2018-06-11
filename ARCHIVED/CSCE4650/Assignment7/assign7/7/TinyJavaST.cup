@@ -1,0 +1,307 @@
+import java_cup.runtime.*;
+import java.util.*;
+
+action code {: SymbolTable currentEnv, env; :};
+
+terminal String ID;
+terminal String INTEGER;
+terminal AND, OR, NOT;
+terminal LT, LE, GT, GE, EQ, NE;
+terminal LPAREN, RPAREN, LBRACK, RBRACK, LBRACE, RBRACE, ASSIGN;
+terminal ARGS, BOOLEAN, CLASS, ELSE, FALSE, IF, IMPORT, IN, INT, JAVA, MAIN;
+terminal NEXTINT, NEW, OUT, PRINTLN, PUBLIC, RETURN, SCANNER, STATIC, STRING; 
+terminal PLUS, MINUS, TIMES, SLASH;
+terminal SEMICOLON, DOT, COMMA;
+terminal SYSTEM, THIS, TRUE, UTIL, VOID, WHILE;
+
+non terminal SymbolTable program;
+non terminal classDefinitionList;
+non terminal classDefinition;
+non terminal memberList;
+non terminal String functionDeclaration;
+non terminal variableDeclarationList;
+non terminal Declarator variableOrArrayDeclaration;
+non terminal assignmentStatement;
+non terminal returnStatementOption;
+non terminal elseOption;
+non terminal expressionListOption;
+non terminal expressionList;
+non terminal expression;
+non terminal memberDeclaration;
+non terminal Declarator memberDeclarator;
+non terminal functionDefinition;
+non terminal andExpression;
+non terminal relationalExpression;
+non terminal arithmeticExpression;
+non terminal term;
+non terminal factor;
+non terminal primaryExpression;
+non terminal addingOperator;
+non terminal multiplyingOperator;
+non terminal Declarator variableDeclaration;
+non terminal ArrayDeclarator arrayDeclaration;
+non terminal Integer subscriptDeclarationList;
+non terminal mainDeclaration;
+non terminal Type type;
+non terminal LinkedList<Type> argumentDeclarationListOption;
+non terminal LinkedList<Type> argumentDeclarationList;
+non terminal Declarator argumentDeclaration;
+non terminal compoundStatement;
+non terminal statementList;
+non terminal statement;
+non terminal relationalOperator;
+non terminal unaryOperator;
+non terminal object;
+non terminal variable;
+non terminal subscriptList;
+non terminal functionCall;
+non terminal String classId;
+non terminal String objectId;
+non terminal String functionId;
+
+start with program;
+
+program ::= 
+    IMPORT JAVA DOT UTIL DOT TIMES SEMICOLON 
+    {: env = new SymbolTable (null); /* start new scope */ :}
+    classDefinitionList {: RESULT = env; :} ;
+
+classDefinitionList ::= classDefinition | classDefinitionList classDefinition ;
+
+classDefinition ::= 
+    CLASS classId:id LBRACE 
+    {:
+      currentEnv = env;                   /* save current env */
+      env = new SymbolTable (currentEnv); /* start new scope */
+      currentEnv . enterClass (id, env);
+    :}
+    memberList RBRACE 
+    {:
+      env = env . parent (); /* restore env */
+    :} ;
+
+memberList ::= memberList memberDeclaration | ;
+
+memberDeclaration ::= 
+    memberDeclarator:decl SEMICOLON 
+  | functionDefinition ;
+
+memberDeclarator ::= 
+    STATIC variableOrArrayDeclaration:decl 
+    {:
+      env . enterVar (decl . id (), decl . type (), true);
+    :}
+  | variableOrArrayDeclaration:decl 
+    {:
+      env . enterVar (decl . id (), decl . type (), false);
+    :} ;
+
+functionDefinition ::= 
+    functionDeclaration:funcId 
+    LBRACE variableDeclarationList statementList returnStatementOption RBRACE 
+    {:
+      currentEnv . enterFuncCode (funcId, ""); /* add code to function entry */
+      env = env . parent (); /* restore env */
+    :}
+  | functionDeclaration:funcId 
+    LBRACE statementList returnStatementOption RBRACE 
+    {:
+      currentEnv . enterFuncCode (funcId, ""); /* add code to function entry */
+      env = env . parent (); /* restore env */
+    :}
+  | functionDeclaration:funcId 
+    LBRACE variableDeclarationList returnStatementOption RBRACE 
+    {:
+      currentEnv . enterFuncCode (funcId, ""); /* add code to function entry */
+      env = env . parent (); /* restore env */
+    :}
+  | functionDeclaration:funcId LBRACE returnStatementOption RBRACE 
+    {:
+      currentEnv . enterFuncCode (funcId, ""); /* add code to function entry */
+      env = env . parent (); /* restore env */
+    :} ;
+
+variableDeclarationList ::= 
+    variableDeclarationList variableOrArrayDeclaration:decl SEMICOLON 
+    {:
+      env . enterVar (decl . id (), decl . type ());
+    :}
+  | variableOrArrayDeclaration:decl SEMICOLON 
+    {:
+      env . enterVar (decl . id (), decl . type ());
+    :} ;
+
+variableOrArrayDeclaration ::= 
+    variableDeclaration:decl 	{: RESULT = decl; :}
+  | arrayDeclaration:decl 	
+    {: if (decl . subscriptNumber () > 1)
+         ErrorMessage . print ("Too few subscripts in initialization");
+       else if (decl . subscriptNumber () < 1)
+         ErrorMessage . print ("Too many subscripts in initialization");
+       RESULT = decl; 
+    :} ;
+
+variableDeclaration ::= 
+    type:type objectId:id
+    {:
+      RESULT = new Declarator (id, type);
+    :} ;
+
+arrayDeclaration ::=
+    arrayDeclaration:decl LBRACK INTEGER:dimension RBRACK 
+    {:
+      RESULT = new ArrayDeclarator (decl . id (),
+        new ArrayType (Integer . parseInt (dimension), decl . type ()),
+        decl . subscriptNumber () - 1);
+    :}
+  | variableDeclaration:decl subscriptDeclarationList:subscriptNumber 
+      ASSIGN NEW INT LBRACK INTEGER:dimension RBRACK 
+    {:
+      RESULT = new ArrayDeclarator (decl . id (),
+        new ArrayType (Integer . parseInt (dimension), decl . type ()),
+        subscriptNumber . intValue ());
+    :} ;
+
+subscriptDeclarationList ::= 
+    subscriptDeclarationList:subscriptNumber LBRACK RBRACK 
+    {: RESULT = new Integer (subscriptNumber . intValue() + 1); :}
+  | LBRACK RBRACK {: RESULT = new Integer (1); :} ;
+
+mainDeclaration ::= 
+    PUBLIC STATIC VOID MAIN LPAREN STRING ARGS LBRACK RBRACK RPAREN 
+    {:
+      currentEnv = env;                   /* save current env */
+      env = new SymbolTable (currentEnv); /* start new scope */
+    :} ;
+
+functionDeclaration ::= 
+    PUBLIC type:type functionId:id 
+    {:
+      currentEnv = env;                   /* save current env */
+      env = new SymbolTable (currentEnv); /* start new scope */
+    :}
+    LPAREN argumentDeclarationListOption:argTypes RPAREN
+    {:
+      /* to allow recursive calls */
+      currentEnv . enterFunc (id, type, false, argTypes, env); 
+      RESULT = id;
+    :}
+  | PUBLIC STATIC type:type functionId:id 
+    {: 
+      currentEnv = env;                   /* save current env */
+      env = new SymbolTable (currentEnv); /* start new scope */
+    :}
+    LPAREN argumentDeclarationListOption:argTypes RPAREN
+    {:
+      /* to allow recursive calls */
+      currentEnv . enterFunc (id, type, true, argTypes, env); 
+      RESULT = id;
+    :}
+  | STATIC SCANNER IN ASSIGN NEW SCANNER LPAREN SYSTEM DOT IN RPAREN SEMICOLON
+     mainDeclaration 
+    {:
+      currentEnv . enterFunc ("main", new VoidType (), true, 
+        new LinkedList<Type> (), env); 
+      RESULT = "main";
+    :} 
+  | mainDeclaration 
+    {:
+      currentEnv . enterFunc ("main", new VoidType (), true, 
+        new LinkedList<Type> (), env); 
+      RESULT = "main";
+    :} ;
+
+type ::= 
+    classId:id 	{: RESULT = new ObjectType (id, env . entry (id)); :}
+  | INT 	{: RESULT = new IntegerType (); :}
+  | BOOLEAN 	{: RESULT = new BooleanType (); :} ;
+
+argumentDeclarationListOption ::= 
+    argumentDeclarationList:argTypes {: RESULT = argTypes; :} 
+  | {: RESULT = new LinkedList<Type> (); :} ;
+
+  argumentDeclaration ::= 
+    variableDeclaration:decl 
+    {: RESULT = new Declarator (decl . id (), decl . type ()); :}
+  | argumentDeclaration:decl LBRACK RBRACK
+    {: 
+      RESULT = new ArrayDeclarator (decl . id (),
+        new ArrayType (0, decl . type ()), 0);
+    :} ;
+
+argumentDeclarationList ::= 
+    argumentDeclarationList:argTypes COMMA argumentDeclaration:decl
+    {:
+      env . enterVar (decl . id (), decl . type ());
+      argTypes . add (decl . type ());
+      RESULT = argTypes;
+    :}
+  | argumentDeclaration:decl 
+    {:
+      env . enterVar (decl . id (), decl . type ());
+      RESULT = new LinkedList<Type> ();
+      RESULT . add (decl . type ());
+    :} ;
+
+compoundStatement ::= LBRACE statementList RBRACE ;
+
+statementList ::= statementList statement | statement ;
+
+statement ::= compoundStatement 
+  | assignmentStatement SEMICOLON 
+  | IF LPAREN expression RPAREN statement elseOption
+  | WHILE LPAREN expression RPAREN statement 
+  | SYSTEM DOT OUT DOT PRINTLN LPAREN expression RPAREN SEMICOLON ;
+
+assignmentStatement ::= variable ASSIGN expression 
+  | variable ASSIGN NEW classId LPAREN RPAREN 
+  | variable ASSIGN IN DOT NEXTINT LPAREN RPAREN ;
+
+returnStatementOption ::= RETURN expression SEMICOLON | ;
+
+elseOption ::= ELSE statement | ;
+
+expressionListOption ::= expressionList | ;
+
+expressionList ::= expressionList COMMA expression | expression ;
+
+expression ::= expression OR andExpression | andExpression ;
+
+andExpression ::= andExpression AND relationalExpression
+  | relationalExpression ;
+
+relationalExpression ::= 
+    arithmeticExpression relationalOperator arithmeticExpression
+  | arithmeticExpression ;
+
+relationalOperator ::= LT | LE | GT | GE | EQ | NE ;
+
+arithmeticExpression ::= term | arithmeticExpression addingOperator term ;
+
+addingOperator ::= PLUS | MINUS ;
+
+term ::= factor | term multiplyingOperator factor ;
+
+multiplyingOperator ::= TIMES | SLASH ;
+
+factor ::= primaryExpression | unaryOperator factor ;
+
+unaryOperator ::= addingOperator | NOT ;
+
+primaryExpression ::= object | INTEGER | TRUE | FALSE 
+  | LPAREN expression RPAREN ;
+
+object ::= variable | functionCall ;
+
+variable ::= THIS | objectId subscriptList | object DOT objectId subscriptList ;
+
+subscriptList ::= subscriptList LBRACK expression RBRACK | ;
+
+functionCall ::= functionId LPAREN expressionListOption RPAREN 
+  | object DOT functionId LPAREN expressionListOption RPAREN ; 
+
+classId ::= ID:id {: RESULT = id; :} ;
+
+objectId ::= ID:id {: RESULT = id; :} ;
+
+functionId ::= ID:id {: RESULT = id; :} ;

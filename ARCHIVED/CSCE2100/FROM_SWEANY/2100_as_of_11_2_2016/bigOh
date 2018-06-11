@@ -1,0 +1,20 @@
+KNOW this definition !!!
+
+  f(n) = O(g(n)) iff there exist two constants, c and n0 such that 
+    |f(n)| <= c * |g(n)| for all n >= n0
+
+  Is f(n) = (n * (n+1)() / 2)  O(n**2) ?
+
+  Is n**3 + 1023 n**2 + 1000000  O(n**3)?
+
+  Is 2**n O(n!) ?
+
+  Is ((n * (n+1)) / 2) O(2**n) ?
+
+-------------------------------------------------------------
+
+Design Algebra for Big-Oh
+
+O(n) +  O(m)  == O(n + m)
+
+O(n) *  O(m)  == O(nm)

@@ -1,0 +1,10 @@
+**This is contingent on having the "integers.txt" file in the same directory as this program**
+My program reads that file and outputs it to the command line, I'll be using directed output
+to make sure that the sorted list goes to a file called "integers_sorted" without the quotes.
+But the whole thing is based on having integers.txt file in the same directory.
+
+Compile this like any other c++ program:
+1. type in "g++ *.cpp" without the quotes
+2. type in "./a.out > integers_sorted.txt" without the quotes
+3. type in "more integers_sorted.txt" without the quotes to verify it's sorted correctly
+4. give me an A :)
